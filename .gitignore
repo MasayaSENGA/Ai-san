@@ -32,3 +32,6 @@ captures/
 # Log/OS files
 *.log
 .DS_Store
+
+# Claude Code local session state
+.claude/
