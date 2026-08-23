@@ -42,8 +42,9 @@ app/
       radio_stations.db         アプリに同梱するSQLiteデータベース
 files/
   radio_stations.db             データベースの元データ(参照用)
-  jp_am_fm_stations.json        日本AM/FM主要局データ(元データ)
-  sw_stations.json              短波サンプルデータ(元データ)
+  jp_am_fm_stations.json        NHK・広域民放主要局データ(元データ)
+  community_fm_stations.json    コミュニティFM局データ(元データ)
+  sw_stations.json              短波主要国際放送局データ(元データ)
   README.md                     データベースの詳細・拡張方法
 ```
 
@@ -58,8 +59,9 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note
 - `band`: `AM` / `FM` / `SW`
 - `freq_khz`: AM/FM/SWいずれもkHz単位で統一格納(FMはMHz値を×1000して格納)
 
-収録されているのは主要局のみ(NHK + 関東・関西・中京キー局など)です。
-データの詳細・拡張方法については [`files/README.md`](files/README.md) を参照してください。
+計533局を収録(AM 80 / FM 434 / SW 19)。NHK・全国47都道府県の広域民放主要局、
+コミュニティFM343局、短波主要国際放送局19局を含みます。
+データの出所・既知の制約・拡張方法については [`files/README.md`](files/README.md) を参照してください。
 
 ## ビルド方法
 
