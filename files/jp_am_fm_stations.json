@@ -1,0 +1,36 @@
+{
+  "_readme": "日本国内 AM/FM 主要局スターターセット。NHKと三大都市圏(関東・関西・中京)のキー局を中心に収録。コミュニティFM(300局超)や各県の準キー局・NHK地方局は未収録。配信前に必ず radiko.jp の局一覧や NHK公式、各社サイトで周波数の裏取りをしてください。",
+  "_schema_version": 1,
+  "stations": [
+    {"id": "jp-nhk1-tokyo", "band": "AM", "freq_khz": 594, "name": "NHKラジオ第1", "area": "東京", "callsign": "JOAK", "network": "NHK"},
+    {"id": "jp-nhk2-tokyo", "band": "AM", "freq_khz": 693, "name": "NHKラジオ第2", "area": "東京", "callsign": "JOAB", "network": "NHK"},
+    {"id": "jp-nhkfm-tokyo", "band": "FM", "freq_mhz": 82.5, "name": "NHK-FM", "area": "東京", "callsign": "JOAK-FM", "network": "NHK"},
+    {"id": "jp-tbs", "band": "AM", "freq_khz": 954, "name": "TBSラジオ", "area": "東京", "callsign": "JOKR", "network": "JRN/NRN"},
+    {"id": "jp-qr", "band": "AM", "freq_khz": 1134, "name": "文化放送", "area": "東京", "callsign": "JOQR", "network": "NRN"},
+    {"id": "jp-lf", "band": "AM", "freq_khz": 1242, "name": "ニッポン放送", "area": "東京", "callsign": "JOLF", "network": "NRN"},
+    {"id": "jp-rf-kanagawa", "band": "AM", "freq_khz": 1422, "name": "ラジオ日本", "area": "神奈川", "callsign": "JOAG", "network": "independent"},
+    {"id": "jp-tokyofm", "band": "FM", "freq_mhz": 80.0, "name": "TOKYO FM", "area": "東京", "callsign": "JOAU-FM", "network": "JFN"},
+    {"id": "jp-jwave", "band": "FM", "freq_mhz": 81.3, "name": "J-WAVE", "area": "東京", "callsign": "JOAV-FM", "network": "independent"},
+    {"id": "jp-interfm", "band": "FM", "freq_mhz": 89.7, "name": "InterFM897", "area": "東京", "callsign": "JOIF-FM", "network": "independent"},
+    {"id": "jp-bayfm", "band": "FM", "freq_mhz": 78.0, "name": "bayfm78", "area": "千葉", "callsign": "JODW-FM", "network": "MegaNet"},
+    {"id": "jp-nack5", "band": "FM", "freq_mhz": 79.5, "name": "NACK5", "area": "埼玉", "callsign": "JODK-FM", "network": "MegaNet"},
+    {"id": "jp-fmyokohama", "band": "FM", "freq_mhz": 84.7, "name": "FMヨコハマ", "area": "神奈川", "callsign": "JOKZ-FM", "network": "JFN"},
+
+    {"id": "jp-nhk1-osaka", "band": "AM", "freq_khz": 666, "name": "NHKラジオ第1", "area": "大阪", "callsign": "JOBK", "network": "NHK"},
+    {"id": "jp-nhk2-osaka", "band": "AM", "freq_khz": 828, "name": "NHKラジオ第2", "area": "大阪", "callsign": "JOBB", "network": "NHK"},
+    {"id": "jp-nhkfm-osaka", "band": "FM", "freq_mhz": 88.1, "name": "NHK-FM", "area": "大阪", "callsign": "JOBK-FM", "network": "NHK"},
+    {"id": "jp-mbs", "band": "AM", "freq_khz": 1179, "name": "MBSラジオ", "area": "大阪", "callsign": "JOOR", "network": "JRN"},
+    {"id": "jp-abc", "band": "AM", "freq_khz": 1008, "name": "ABCラジオ", "area": "大阪", "callsign": "JOBK-AM (ABC)", "network": "NRN"},
+    {"id": "jp-obc", "band": "AM", "freq_khz": 1314, "name": "ラジオ大阪", "area": "大阪", "callsign": "JOOF", "network": "independent"},
+    {"id": "jp-fm802", "band": "FM", "freq_mhz": 80.2, "name": "FM802", "area": "大阪", "callsign": "JOFV-FM", "network": "independent"},
+    {"id": "jp-fmcocolo", "band": "FM", "freq_mhz": 76.5, "name": "FM COCOLO", "area": "大阪", "callsign": "JOAG-FM (COCOLO)", "network": "independent"},
+    {"id": "jp-kissfmkobe", "band": "FM", "freq_mhz": 89.9, "name": "Kiss FM KOBE", "area": "兵庫", "callsign": "JOCR-FM", "network": "independent"},
+
+    {"id": "jp-nhk1-nagoya", "band": "AM", "freq_khz": 729, "name": "NHKラジオ第1", "area": "愛知", "callsign": "JOCK", "network": "NHK"},
+    {"id": "jp-nhk2-nagoya", "band": "AM", "freq_khz": 909, "name": "NHKラジオ第2", "area": "愛知", "callsign": "JOCB", "network": "NHK"},
+    {"id": "jp-cbc", "band": "AM", "freq_khz": 1053, "name": "CBCラジオ", "area": "愛知", "callsign": "JOAR", "network": "JRN"},
+    {"id": "jp-tokairadio", "band": "AM", "freq_khz": 1332, "name": "東海ラジオ", "area": "愛知", "callsign": "JOSF", "network": "NRN"},
+    {"id": "jp-zipfm", "band": "FM", "freq_mhz": 77.8, "name": "ZIP-FM", "area": "愛知", "callsign": "JOZZ-FM", "network": "independent"},
+    {"id": "jp-fmaichi", "band": "FM", "freq_mhz": 80.7, "name": "FM AICHI", "area": "愛知", "callsign": "JOAK-FM (AICHI)", "network": "JFN"}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "_readme": "短波(SW)は季節ごとにスケジュールが変わり、世界で数千件規模になるため、正確な全件データはEiBiリスト(https://www.eibispace.de/)またはAoki List(短波.info系)からの定期同期を前提にしてください。ここに入れているのは形式確認用のサンプル数件のみで、正確性は保証されません。",
+  "_schema_version": 1,
+  "_sync_sources": [
+    {"name": "EiBi Shortwave Schedules", "note": "無料・季節ごとに更新。CSV/テキスト形式で配布。"},
+    {"name": "Aoki List (短波リスト)", "note": "日本語圏でよく使われる短波スケジュールリスト。"}
+  ],
+  "stations": [
+    {"id": "sw-sample-1", "band": "SW", "freq_khz": 9750, "name": "NHKワールド・ラジオ日本(例)", "language": "Japanese", "target_area": "Asia", "utc_time": "example", "note": "季節スケジュールにより変動。要同期確認。"},
+    {"id": "sw-sample-2", "band": "SW", "freq_khz": 15400, "name": "BBC World Service(例)", "language": "English", "target_area": "Asia", "utc_time": "example", "note": "季節スケジュールにより変動。要同期確認。"}
+  ]
+}
