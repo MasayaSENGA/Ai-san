@@ -22,6 +22,11 @@ AM／FM／短波(SW)を切り替えて周波数を入力すると、あらかじ
 同じ周波数に全国の中継局が並ぶため、検索結果は周波数の近い順、次に送信出力の大きい順
 (受信している可能性の高い順)に表示します。
 
+「現在地から近い順に並べる」をオンにすると、スマートフォンの位置情報(おおよその位置)を使って、
+同じ周波数の中を送信所が現在地から近い順に並べ替え、各局までの距離の目安を表示します。
+初めてオンにしたときに位置情報の利用許可を求めます。位置情報は並べ替えのためだけに端末内で使い、
+外部には送信しません。
+
 ## 技術構成
 
 - Kotlin
@@ -38,6 +43,8 @@ app/
       MainActivity.kt          画面(Compose UI)
       ui/Band.kt                AM/FM/SW の単位変換・許容幅の定義
       ui/StationViewModel.kt    検索状態管理
+      ui/StationSorting.kt      現在地からの距離の計算・近い順の並べ替え
+      location/CurrentLocation.kt  現在地の取得(LocationManager)
       data/Station.kt           Room Entity
       data/StationDao.kt        検索クエリ
       data/AppDatabase.kt       Room Database(assetsからの読み込み)
@@ -60,14 +67,15 @@ files/
 `stations`テーブルの列構成は以下の通りです。
 
 ```
-id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw
+id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw, lat, lon
 ```
 
 - `band`: `AM` / `FM` / `SW`
 - `freq_khz`: AM/FM/SWいずれもkHz単位で統一格納(FMはMHz値を×1000して格納)
 - `power_kw`: 送信出力(空中線電力、kW)。国際放送など不明な局は `NULL`
+- `lat` / `lon`: 送信所の座標。国内局は送信所がある市区町村の代表点(Wikidata)、国際放送はEiBiの送信所の座標
 
-計2,448局を収録(AM 494 / FM 1,468 / SW 486)。
+計2,459局を収録(AM 496 / FM 1,468 / SW 495)。
 
 - 国内のAM・FM放送: NHK・民放の親局と中継局、FM補完中継局(ワイドFM)、コミュニティFM(中継局を含む)、
   臨時災害放送局など。総務省 電波利用ポータルの無線局免許情報(2026年9月25日更新分)に基づきます。

@@ -22,5 +22,7 @@ data class Station(
     val language: String?,
     val target_area: String?,
     val note: String?,
-    val power_kw: Double?
+    val power_kw: Double?,
+    val lat: Double?,
+    val lon: Double?
 )

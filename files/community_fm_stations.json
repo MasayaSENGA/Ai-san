@@ -1,6 +1,6 @@
 {
   "_readme": "日本国内のコミュニティFM局(1992年制度化、76.0〜90.0MHz帯、市区町村単位の小規模FM局)データセット。Wikipedia「コミュニティ放送局一覧」の生wikitext/HTMLを直接パースし、一部は総務省(各総合通信局)の無線局情報でも裏取りして作成。廃局(放送終了)は除外済み。列構成はradio_stations.dbのstationsテーブルと同一。中継局は mic_stations.json(総務省の免許情報から自動生成)に収録。",
-  "_schema_version": 2,
+  "_schema_version": 3,
   "stations": [
     {
       "id": "jp-cfm-hakodate-fm-iruka",
@@ -13,7 +13,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 函館山ロープウェイ株式会社",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 41.76867,
+      "lon": 140.72892
     },
     {
       "id": "jp-cfm-asahikawa-fm-riberu",
@@ -26,7 +28,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 株式会社旭川シティネットワーク",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.77064,
+      "lon": 142.365
     },
     {
       "id": "jp-cfm-kushiro-fm-kushiro",
@@ -39,7 +43,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムくしろ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.98489,
+      "lon": 144.38172
     },
     {
       "id": "jp-cfm-obihiro-fm-wing",
@@ -52,7 +58,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: おびひろ市民ラジオ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.92397,
+      "lon": 143.19611
     },
     {
       "id": "jp-cfm-obihiro-fm-jaga",
@@ -65,7 +73,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムおびひろ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.92397,
+      "lon": 143.19611
     },
     {
       "id": "jp-cfm-iwamizawa-fm-hamanasu",
@@ -78,7 +88,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: コミュニティエフエムはまなす",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.19617,
+      "lon": 141.77589
     },
     {
       "id": "jp-cfm-otaru-fm-otaru",
@@ -91,7 +103,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエム小樽放送局",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.19072,
+      "lon": 140.99436
     },
     {
       "id": "jp-cfm-wakkanai-fm-wappi",
@@ -104,7 +118,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 株式会社エフエムわっかない",
-      "power_kw": 0.05
+      "power_kw": 0.05,
+      "lat": 45.37407,
+      "lon": 141.7507
     },
     {
       "id": "jp-cfm-sapporo-chuo-radio-kalos",
@@ -117,7 +133,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 札幌コミュニティ放送局",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.05536,
+      "lon": 141.34097
     },
     {
       "id": "jp-cfm-sapporo-toyohira-fm-apple",
@@ -130,7 +148,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムとよひら",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.01333,
+      "lon": 141.39111
     },
     {
       "id": "jp-cfm-sapporo-nishi-sankakuyama",
@@ -143,7 +163,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: らむれす",
-      "power_kw": 0.015
+      "power_kw": 0.015,
+      "lat": 43.07444,
+      "lon": 141.30083
     },
     {
       "id": "jp-cfm-nemuro-fm-nemuro",
@@ -156,7 +178,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: ねむろ市民ラジオ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.33008,
+      "lon": 145.58286
     },
     {
       "id": "jp-cfm-sapporo-chuo-radio-nostalgia",
@@ -169,7 +193,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 札幌ラヂオ放送",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 43.05536,
+      "lon": 141.34097
     },
     {
       "id": "jp-cfm-kitahiroshima-fm-maple",
@@ -182,7 +208,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 北広島エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.9855,
+      "lon": 141.56308
     },
     {
       "id": "jp-cfm-takikawa-fm-gsky",
@@ -195,7 +223,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムなかそらち",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.55783,
+      "lon": 141.91042
     },
     {
       "id": "jp-cfm-sapporo-higashi-sapporomura-radio",
@@ -208,7 +238,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.07611,
+      "lon": 141.36361
     },
     {
       "id": "jp-cfm-sapporo-atsubetsu-radio-yamasho",
@@ -221,7 +253,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: BIPSC",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.03611,
+      "lon": 141.47472
     },
     {
       "id": "jp-cfm-rumoi-fm-moeru",
@@ -234,7 +268,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.94097,
+      "lon": 141.63703
     },
     {
       "id": "jp-cfm-furano-radio-furano",
@@ -247,7 +283,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.34203,
+      "lon": 142.38319
     },
     {
       "id": "jp-cfm-eniwa-e-niwa",
@@ -260,7 +298,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: あいコミ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.88256,
+      "lon": 141.57778
     },
     {
       "id": "jp-cfm-nayoro-air-tesshi",
@@ -273,7 +313,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムなよろ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 44.35594,
+      "lon": 142.46319
     },
     {
       "id": "jp-cfm-sapporo-shiroishi-with-s",
@@ -286,7 +328,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムしろいし",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.04778,
+      "lon": 141.405
     },
     {
       "id": "jp-cfm-nakashibetsu-fm-hana",
@@ -299,7 +343,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: FMなかしべつ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.55522,
+      "lon": 144.97136
     },
     {
       "id": "jp-cfm-muroran-fm-vu",
@@ -312,7 +358,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 室蘭まちづくり放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.31525,
+      "lon": 140.97403
     },
     {
       "id": "jp-cfm-niseko-radio-niseko",
@@ -325,7 +373,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: ニセコリゾート観光協会",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.805,
+      "lon": 140.68792
     },
     {
       "id": "jp-cfm-date-wi-radio",
@@ -338,7 +388,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: だて観光協会",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.55117,
+      "lon": 140.76411
     },
     {
       "id": "jp-cfm-abashiri-fm-abashiri",
@@ -351,7 +403,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: LIA",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 44.02064,
+      "lon": 144.27356
     },
     {
       "id": "jp-cfm-tomakomai-fm-tomakomai",
@@ -364,7 +418,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: とまこまいコミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 42.63406,
+      "lon": 141.60553
     },
     {
       "id": "jp-cfm-kuriyama-fm-kuriyama",
@@ -377,7 +433,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 43.05631,
+      "lon": 141.78431
     },
     {
       "id": "jp-cfm-yamagata-radio-monster",
@@ -390,7 +448,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 山形コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.25542,
+      "lon": 140.33961
     },
     {
       "id": "jp-cfm-sendai-aoba-radio3",
@@ -403,7 +463,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 仙台シティエフエム",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.26917,
+      "lon": 140.87056
     },
     {
       "id": "jp-cfm-fukushima-fm-poco",
@@ -416,7 +478,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 福島コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.76081,
+      "lon": 140.47472
     },
     {
       "id": "jp-cfm-aizuwakamatsu-fm-ais",
@@ -429,7 +493,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエム会津",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.49483,
+      "lon": 139.92975
     },
     {
       "id": "jp-cfm-iwaki-sea-wave",
@@ -442,7 +508,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: いわき市民コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.0505,
+      "lon": 140.88772
     },
     {
       "id": "jp-cfm-shiogama-bay-wave",
@@ -455,7 +523,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムベイエリア",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.31436,
+      "lon": 141.02197
     },
     {
       "id": "jp-cfm-ishinomaki-radio-ishinomaki",
@@ -468,7 +538,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 石巻コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.43425,
+      "lon": 141.30272
     },
     {
       "id": "jp-cfm-mutsu-fm-azur",
@@ -481,7 +553,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムむつ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 41.29283,
+      "lon": 141.18361
     },
     {
       "id": "jp-cfm-morioka-radio-morioka",
@@ -494,7 +568,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.72377,
+      "lon": 141.21183
     },
     {
       "id": "jp-cfm-iwanuma-fm-iwanuma",
@@ -507,7 +583,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.10428,
+      "lon": 140.87017
     },
     {
       "id": "jp-cfm-sakata-harbor-radio",
@@ -520,7 +598,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 酒田エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.91486,
+      "lon": 139.83672
     },
     {
       "id": "jp-cfm-hachinohe-be-fm",
@@ -533,7 +613,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: ビーエフエム",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 40.51228,
+      "lon": 141.48839
     },
     {
       "id": "jp-cfm-akita-akita-community",
@@ -546,7 +628,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.71989,
+      "lon": 140.10258
     },
     {
       "id": "jp-cfm-yuzawa-fm-utopia",
@@ -559,7 +643,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムゆーとぴあ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.16444,
+      "lon": 140.49583
     },
     {
       "id": "jp-cfm-sendai-izumi-fm-izumi",
@@ -572,7 +658,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: せんだい泉エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.32639,
+      "lon": 140.88139
     },
     {
       "id": "jp-cfm-hirosaki-fm-apple-wave",
@@ -585,7 +673,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: アップルウェーブ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 40.60311,
+      "lon": 140.46383
     },
     {
       "id": "jp-cfm-akita-fm-tsubakidai",
@@ -598,7 +688,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 秋田椿台エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.71989,
+      "lon": 140.10258
     },
     {
       "id": "jp-cfm-kitakata-kitakata-city-fm",
@@ -611,7 +703,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.65114,
+      "lon": 139.87475
     },
     {
       "id": "jp-cfm-ninohe-cassiopeia-fm",
@@ -624,7 +718,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: カシオペア市民情報ネットワーク",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 40.25462,
+      "lon": 141.25027
     },
     {
       "id": "jp-cfm-motomiya-fm-motcom",
@@ -637,7 +733,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: Mot.Comもとみや",
-      "power_kw": 0.018
+      "power_kw": 0.018,
+      "lat": 37.51319,
+      "lon": 140.39383
     },
     {
       "id": "jp-cfm-oshu-oshu-fm",
@@ -650,7 +748,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 奥州エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.14447,
+      "lon": 141.13914
     },
     {
       "id": "jp-cfm-sendai-taihaku-fm-taihaku",
@@ -663,7 +763,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.22444,
+      "lon": 140.87722
     },
     {
       "id": "jp-cfm-tome-h-fm",
@@ -676,7 +778,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 登米コミュニティエフエム",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.69183,
+      "lon": 141.18775
     },
     {
       "id": "jp-cfm-hanamaki-fm-one",
@@ -689,7 +793,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: えふえむ花巻",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.41528,
+      "lon": 141.14221
     },
     {
       "id": "jp-cfm-koriyama-koco-radi",
@@ -702,7 +808,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 郡山コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.4003,
+      "lon": 140.3597
     },
     {
       "id": "jp-cfm-yokote-kamakura-fm",
@@ -715,7 +823,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 横手コミュニティFM放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.31372,
+      "lon": 140.56661
     },
     {
       "id": "jp-cfm-ichinoseki-fm-asumo",
@@ -728,7 +838,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 一関コミュニティFM",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.93472,
+      "lon": 141.12658
     },
     {
       "id": "jp-cfm-yonezawa-fm-ncv-okitama",
@@ -741,7 +853,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: ニューメディア",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.92222,
+      "lon": 140.11667
     },
     {
       "id": "jp-cfm-osaki-ocr-fm835",
@@ -754,7 +868,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: おおさきエフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.57711,
+      "lon": 140.95558
     },
     {
       "id": "jp-cfm-kazuno-kiritanpo-fm",
@@ -767,7 +883,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 鹿角コミュニティFM",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 40.21578,
+      "lon": 140.7885
     },
     {
       "id": "jp-cfm-miyako-miyako-harbor-radio",
@@ -780,7 +898,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 宮古エフエム放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.63972,
+      "lon": 141.94611
     },
     {
       "id": "jp-cfm-goshogawara-g-radio",
@@ -793,7 +913,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 五所川原エフエム",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 40.80772,
+      "lon": 140.44608
     },
     {
       "id": "jp-cfm-nagai-orandaradio",
@@ -806,7 +928,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 日本・アルカディア・ネットワーク",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.1075,
+      "lon": 140.04053
     },
     {
       "id": "jp-cfm-natori-natoraji801",
@@ -819,7 +943,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: エフエムなとり",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.17153,
+      "lon": 140.89181
     },
     {
       "id": "jp-cfm-daisen-fm-hanabi",
@@ -832,7 +958,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: TMO大曲",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.45306,
+      "lon": 140.47544
     },
     {
       "id": "jp-cfm-sendai-miyagino-rakuten-fm-tohoku",
@@ -845,7 +973,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 楽天野球団",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.26639,
+      "lon": 140.91028
     },
     {
       "id": "jp-cfm-kesennuma-gyotto-fm",
@@ -858,7 +988,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: ラヂオ気仙沼",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.90806,
+      "lon": 141.56994
     },
     {
       "id": "jp-cfm-kitakami-e-and-be-fm",
@@ -871,7 +1003,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 北上ケーブルテレビ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 39.28675,
+      "lon": 141.11322
     },
     {
       "id": "jp-cfm-sukagawa-ultra-fm",
@@ -884,7 +1018,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: こぷろ須賀川",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.28689,
+      "lon": 140.37256
     },
     {
       "id": "jp-cfm-shinjo-asuraji",
@@ -897,7 +1033,9 @@
       "language": null,
       "target_area": null,
       "note": "免許人: 新庄コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 38.76503,
+      "lon": 140.30164
     },
     {
       "id": "jp-cfm-zushi-shonan-beach-fm",
@@ -910,7 +1048,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.27206,
+      "lon": 139.58625
     },
     {
       "id": "jp-cfm-hiratsuka-fm-shonan-napasa",
@@ -923,7 +1063,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.33553,
+      "lon": 139.34944
     },
     {
       "id": "jp-cfm-yokosuka-fm-blue-shonan",
@@ -936,7 +1078,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.28131,
+      "lon": 139.67208
     },
     {
       "id": "jp-cfm-kamakura-fm",
@@ -949,7 +1093,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.31917,
+      "lon": 139.54722
     },
     {
       "id": "jp-cfm-musashino-fm",
@@ -962,7 +1108,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.71772,
+      "lon": 139.56606
     },
     {
       "id": "jp-cfm-kisarazu-kazusa-fm",
@@ -975,7 +1123,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.33053,
+      "lon": 139.90247
     },
     {
       "id": "jp-cfm-fujisawa-radio-shonan",
@@ -988,7 +1138,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.33878,
+      "lon": 139.49089
     },
     {
       "id": "jp-cfm-kawasaki-nakahara-fm",
@@ -1001,7 +1153,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.007
+      "power_kw": 0.007,
+      "lat": 35.57611,
+      "lon": 139.65583
     },
     {
       "id": "jp-cfm-sagamihara-fm-hot839",
@@ -1014,7 +1168,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.57139,
+      "lon": 139.37333
     },
     {
       "id": "jp-cfm-iruma-fm-chappy",
@@ -1027,7 +1183,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.83581,
+      "lon": 139.39114
     },
     {
       "id": "jp-cfm-mito-fm-parurun",
@@ -1040,7 +1198,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.36583,
+      "lon": 140.47125
     },
     {
       "id": "jp-cfm-katsushika-fm",
@@ -1053,7 +1213,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.74344,
+      "lon": 139.84717
     },
     {
       "id": "jp-cfm-takasaki-radio",
@@ -1066,7 +1228,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.32311,
+      "lon": 139.00236
     },
     {
       "id": "jp-cfm-yamato-fm",
@@ -1079,7 +1243,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.48753,
+      "lon": 139.45803
     },
     {
       "id": "jp-cfm-edogawa-fm",
@@ -1092,7 +1258,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.70664,
+      "lon": 139.86828
     },
     {
       "id": "jp-cfm-numata-fm-oze",
@@ -1105,7 +1273,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.64393,
+      "lon": 139.04275
     },
     {
       "id": "jp-cfm-nishitokyo-fm",
@@ -1118,7 +1288,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.72561,
+      "lon": 139.53825
     },
     {
       "id": "jp-cfm-konosu-flower-radio",
@@ -1131,7 +1303,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.06589,
+      "lon": 139.52219
     },
     {
       "id": "jp-cfm-chofu-fm",
@@ -1144,7 +1318,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.65058,
+      "lon": 139.54067
     },
     {
       "id": "jp-cfm-chuo-fm-radio-city",
@@ -1157,7 +1333,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.67058,
+      "lon": 139.77197
     },
     {
       "id": "jp-cfm-ichikawa-urara-fm",
@@ -1170,7 +1348,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.72192,
+      "lon": 139.93106
     },
     {
       "id": "jp-cfm-setagaya-fm",
@@ -1183,7 +1363,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.64656,
+      "lon": 139.65322
     },
     {
       "id": "jp-cfm-ota-fm-taro",
@@ -1196,7 +1378,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.29114,
+      "lon": 139.37539
     },
     {
       "id": "jp-cfm-kashima-fm",
@@ -1209,7 +1393,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.96564,
+      "lon": 140.64483
     },
     {
       "id": "jp-cfm-yokohama-aoba-fm-salus",
@@ -1222,7 +1408,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.55278,
+      "lon": 139.53722
     },
     {
       "id": "jp-cfm-koto-rainbow-town-fm",
@@ -1235,7 +1423,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.67281,
+      "lon": 139.81728
     },
     {
       "id": "jp-cfm-higashimurayama-tama-lakeside-fm",
@@ -1248,7 +1438,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.75461,
+      "lon": 139.4685
     },
     {
       "id": "jp-cfm-tamamura-radio-nanami",
@@ -1261,7 +1453,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.30442,
+      "lon": 139.11492
     },
     {
       "id": "jp-cfm-saitama-urawa-reds-wave",
@@ -1274,7 +1468,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.86201,
+      "lon": 139.64554
     },
     {
       "id": "jp-cfm-asaka-nanako-lively-fm",
@@ -1287,7 +1483,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.79719,
+      "lon": 139.59389
     },
     {
       "id": "jp-cfm-tachikawa-fm",
@@ -1300,7 +1498,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.71394,
+      "lon": 139.40792
     },
     {
       "id": "jp-cfm-odawara-fm",
@@ -1313,7 +1513,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.26461,
+      "lon": 139.15222
     },
     {
       "id": "jp-cfm-kiryu-fm",
@@ -1326,7 +1528,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.40533,
+      "lon": 139.33047
     },
     {
       "id": "jp-cfm-tsukuba-radio",
@@ -1339,7 +1543,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.08347,
+      "lon": 140.07644
     },
     {
       "id": "jp-cfm-isesaki-fm",
@@ -1352,7 +1558,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.31136,
+      "lon": 139.19681
     },
     {
       "id": "jp-cfm-yokohama-totsuka-fm",
@@ -1365,7 +1573,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.39639,
+      "lon": 139.5325
     },
     {
       "id": "jp-cfm-ichihara-fm",
@@ -1378,7 +1588,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.49806,
+      "lon": 140.11544
     },
     {
       "id": "jp-cfm-kiyokawa-miyagase-lakeside-fm",
@@ -1391,7 +1603,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.002
+      "power_kw": 0.002,
+      "lat": 35.48236,
+      "lon": 139.27639
     },
     {
       "id": "jp-cfm-hitachi-fm",
@@ -1404,7 +1618,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.59914,
+      "lon": 140.6515
     },
     {
       "id": "jp-cfm-maebashi-radio",
@@ -1417,7 +1633,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.3895,
+      "lon": 139.06344
     },
     {
       "id": "jp-cfm-ebina-fm-kaon",
@@ -1430,7 +1648,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.015
+      "power_kw": 0.015,
+      "lat": 35.44642,
+      "lon": 139.39081
     },
     {
       "id": "jp-cfm-daigo-fm",
@@ -1443,7 +1663,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.76417,
+      "lon": 140.36361
     },
     {
       "id": "jp-cfm-narita-radio",
@@ -1456,7 +1678,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.77667,
+      "lon": 140.31833
     },
     {
       "id": "jp-cfm-tochigi-fm-kurara857",
@@ -1469,7 +1693,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.38244,
+      "lon": 139.73414
     },
     {
       "id": "jp-cfm-ushiku-fm-ureshiku",
@@ -1482,7 +1708,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.97936,
+      "lon": 140.14956
     },
     {
       "id": "jp-cfm-kawaguchi-fm",
@@ -1495,7 +1723,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.80758,
+      "lon": 139.72414
     },
     {
       "id": "jp-cfm-koshigaya-fm",
@@ -1508,7 +1738,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.89114,
+      "lon": 139.79092
     },
     {
       "id": "jp-cfm-shibuya-no-radio",
@@ -1521,7 +1753,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.66367,
+      "lon": 139.69772
     },
     {
       "id": "jp-cfm-yachiyo-fm-fukurou",
@@ -1534,7 +1768,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.72242,
+      "lon": 140.09989
     },
     {
       "id": "jp-cfm-oiso-shonan-magic-wave",
@@ -1547,7 +1783,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.29953,
+      "lon": 139.25553
     },
     {
       "id": "jp-cfm-miyoshi-hassuru-fm",
@@ -1560,7 +1798,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.82839,
+      "lon": 139.52647
     },
     {
       "id": "jp-cfm-utsunomiya-miyaradi",
@@ -1573,7 +1813,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.55511,
+      "lon": 139.88256
     },
     {
       "id": "jp-cfm-hachioji-tokyo-star-radio",
@@ -1586,7 +1828,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.66644,
+      "lon": 139.316
     },
     {
       "id": "jp-cfm-oyama-oradi",
@@ -1599,7 +1843,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.31131,
+      "lon": 139.80106
     },
     {
       "id": "jp-cfm-higashikurume-tokyo854",
@@ -1612,7 +1858,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.758,
+      "lon": 139.52986
     },
     {
       "id": "jp-cfm-yokohama-naka-marine-fm",
@@ -1625,7 +1873,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.44472,
+      "lon": 139.64214
     },
     {
       "id": "jp-cfm-fuchu-tama-river-radio",
@@ -1638,7 +1888,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.007
+      "power_kw": 0.007,
+      "lat": 35.66944,
+      "lon": 139.4775
     },
     {
       "id": "jp-cfm-kumagaya-fm",
@@ -1651,7 +1903,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.14739,
+      "lon": 139.38864
     },
     {
       "id": "jp-cfm-shinagawa-fm",
@@ -1664,7 +1918,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.60917,
+      "lon": 139.73017
     },
     {
       "id": "jp-cfm-komae-komaradi",
@@ -1677,7 +1933,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.004
+      "power_kw": 0.004,
+      "lat": 35.63478,
+      "lon": 139.57869
     },
     {
       "id": "jp-cfm-chichibu-fm",
@@ -1690,7 +1948,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.95972,
+      "lon": 138.93333
     },
     {
       "id": "jp-cfm-shimotsuke-fm-yugao",
@@ -1703,7 +1963,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.39486,
+      "lon": 139.85181
     },
     {
       "id": "jp-cfm-moka-fm",
@@ -1716,7 +1978,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.44042,
+      "lon": 140.01339
     },
     {
       "id": "jp-cfm-chiba-chuo-skywave-fm",
@@ -1729,7 +1993,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.62056,
+      "lon": 140.13583
     },
     {
       "id": "jp-cfm-kawagoe-radio",
@@ -1742,7 +2008,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.92514,
+      "lon": 139.48578
     },
     {
       "id": "jp-cfm-fukaya-fm-fukkachan",
@@ -1755,7 +2023,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.19747,
+      "lon": 139.2815
     },
     {
       "id": "jp-cfm-yokohama-kanazawa-seaside-fm",
@@ -1768,7 +2038,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.3375,
+      "lon": 139.62444
     },
     {
       "id": "jp-cfm-kazo-fm-watarase",
@@ -1781,7 +2053,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.13144,
+      "lon": 139.60178
     },
     {
       "id": "jp-cfm-chigasaki-fm-eboshi",
@@ -1794,7 +2068,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.33386,
+      "lon": 139.40472
     },
     {
       "id": "jp-cfm-ashikaga-fm-damono",
@@ -1807,7 +2083,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.34981,
+      "lon": 139.45139
     },
     {
       "id": "jp-cfm-kawasaki-fm-daishi",
@@ -1820,7 +2098,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.52944,
+      "lon": 139.70333
     },
     {
       "id": "jp-cfm-ageo-airaji",
@@ -1833,7 +2113,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.97739,
+      "lon": 139.59319
     },
     {
       "id": "jp-cfm-fussa-hello-fm",
@@ -1846,7 +2128,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.003
+      "power_kw": 0.003,
+      "lat": 35.73847,
+      "lon": 139.32694
     },
     {
       "id": "jp-cfm-niigata-radiochat",
@@ -1859,7 +2143,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.78861,
+      "lon": 139.11444
     },
     {
       "id": "jp-cfm-kashiwazaki-pikkara",
@@ -1872,7 +2158,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.36486,
+      "lon": 138.55786
     },
     {
       "id": "jp-cfm-niigata-kento",
@@ -1885,7 +2173,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.91611,
+      "lon": 139.03639
     },
     {
       "id": "jp-cfm-shibata-shibaraji",
@@ -1898,7 +2188,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.94792,
+      "lon": 139.32728
     },
     {
       "id": "jp-cfm-minamiuonuma-yukiguni",
@@ -1911,7 +2203,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.12753,
+      "lon": 138.75572
     },
     {
       "id": "jp-cfm-nagaoka-fm",
@@ -1924,7 +2218,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.44573,
+      "lon": 138.85396
     },
     {
       "id": "jp-cfm-tsubamesanjo-radiohaato",
@@ -1937,7 +2233,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.63678,
+      "lon": 138.96167
     },
     {
       "id": "jp-cfm-joetsu-fmj",
@@ -1950,7 +2248,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.14786,
+      "lon": 138.23608
     },
     {
       "id": "jp-cfm-niigata-pokapokaradio",
@@ -1963,7 +2263,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.76056,
+      "lon": 138.88917
     },
     {
       "id": "jp-cfm-tokamachi-fm",
@@ -1976,7 +2278,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.12753,
+      "lon": 138.75572
     },
     {
       "id": "jp-cfm-myoko-fm",
@@ -1989,7 +2293,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.02519,
+      "lon": 138.25353
     },
     {
       "id": "jp-cfm-uonuma-fm",
@@ -2002,7 +2308,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.23644,
+      "lon": 138.96383
     },
     {
       "id": "jp-cfm-nagano-zenkoji",
@@ -2015,7 +2323,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.64867,
+      "lon": 138.19469
     },
     {
       "id": "jp-cfm-saku-sakudaira",
@@ -2028,7 +2338,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.24881,
+      "lon": 138.47694
     },
     {
       "id": "jp-cfm-karuizawa-fm",
@@ -2041,7 +2353,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 36.34842,
+      "lon": 138.59703
     },
     {
       "id": "jp-cfm-iida-istation",
@@ -2054,7 +2368,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.51481,
+      "lon": 137.82183
     },
     {
       "id": "jp-cfm-suwa-lcvfm769",
@@ -2067,7 +2383,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.99553,
+      "lon": 138.15881
     },
     {
       "id": "jp-cfm-tomi-hareradi",
@@ -2080,7 +2398,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.35939,
+      "lon": 138.33039
     },
     {
       "id": "jp-cfm-azumino-fm",
@@ -2093,7 +2413,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.30389,
+      "lon": 137.90556
     },
     {
       "id": "jp-cfm-matsumoto-fm",
@@ -2106,7 +2428,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.238,
+      "lon": 137.97197
     },
     {
       "id": "jp-cfm-shiojiri-takabocchi",
@@ -2119,7 +2443,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.11497,
+      "lon": 137.95344
     },
     {
       "id": "jp-cfm-ina-inadanifm",
@@ -2132,7 +2458,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.82753,
+      "lon": 137.95397
     },
     {
       "id": "jp-cfm-takaoka-radio",
@@ -2145,7 +2473,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.75406,
+      "lon": 137.02567
     },
     {
       "id": "jp-cfm-toyama-cityfm",
@@ -2158,7 +2488,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.62365,
+      "lon": 137.25615
     },
     {
       "id": "jp-cfm-kurobe-radiomu",
@@ -2171,7 +2503,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.87144,
+      "lon": 137.44775
     },
     {
       "id": "jp-cfm-tonami-fm",
@@ -2184,7 +2518,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.64747,
+      "lon": 136.96214
     },
     {
       "id": "jp-cfm-imizu-fm",
@@ -2197,7 +2533,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.73056,
+      "lon": 137.07556
     },
     {
       "id": "jp-cfm-nonoichi-fmn1",
@@ -2210,7 +2548,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.51942,
+      "lon": 136.60978
     },
     {
       "id": "jp-cfm-kanazawa-radio",
@@ -2223,7 +2563,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.56106,
+      "lon": 136.6565
     },
     {
       "id": "jp-cfm-komatsu-radio",
@@ -2236,7 +2578,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.35972,
+      "lon": 136.47193
     },
     {
       "id": "jp-cfm-nanao-radio",
@@ -2249,7 +2593,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 37.04314,
+      "lon": 136.96744
     },
     {
       "id": "jp-cfm-kahoku-fm",
@@ -2262,7 +2608,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.6536,
+      "lon": 136.645
     },
     {
       "id": "jp-cfm-fukui-machikado",
@@ -2275,7 +2623,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.06406,
+      "lon": 136.21958
     },
     {
       "id": "jp-cfm-tannan-yumeradio",
@@ -2288,7 +2638,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.95647,
+      "lon": 136.18428
     },
     {
       "id": "jp-cfm-tsuruga-harborstation",
@@ -2301,7 +2653,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.64519,
+      "lon": 136.0555
     },
     {
       "id": "jp-cfm-kofu-fm",
@@ -2314,7 +2668,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.66214,
+      "lon": 138.56822
     },
     {
       "id": "jp-cfm-hokuto-yatsugatake",
@@ -2327,7 +2683,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.71329,
+      "lon": 138.42907
     },
     {
       "id": "jp-cfm-fujikawaguchiko-fujiyama",
@@ -2340,7 +2698,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.49725,
+      "lon": 138.75494
     },
     {
       "id": "jp-cfm-fujiyoshida-fujigoko",
@@ -2353,7 +2713,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.48753,
+      "lon": 138.80775
     },
     {
       "id": "jp-cfm-takayama-hitsfm",
@@ -2366,7 +2728,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 36.14603,
+      "lon": 137.25217
     },
     {
       "id": "jp-cfm-tajimi-fmpipi",
@@ -2379,7 +2743,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.33333,
+      "lon": 137.12226
     },
     {
       "id": "jp-cfm-gifu-fmwacchi",
@@ -2392,7 +2758,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.42625,
+      "lon": 136.75944
     },
     {
       "id": "jp-cfm-kani-fmrara",
@@ -2405,7 +2773,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.42606,
+      "lon": 137.06133
     },
     {
       "id": "jp-cfm-hamamatsu-fmharo",
@@ -2418,7 +2788,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.71082,
+      "lon": 137.72624
     },
     {
       "id": "jp-cfm-shizuoka-swave",
@@ -2431,7 +2803,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.975,
+      "lon": 138.38361
     },
     {
       "id": "jp-cfm-mishima-voicecue",
@@ -2444,7 +2818,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.12897,
+      "lon": 138.93373
     },
     {
       "id": "jp-cfm-ito-nagisastation",
@@ -2457,7 +2833,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.96572,
+      "lon": 139.10186
     },
     {
       "id": "jp-cfm-numazu-coastfm",
@@ -2470,7 +2848,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.09558,
+      "lon": 138.86344
     },
     {
       "id": "jp-cfm-atami-ciao",
@@ -2483,7 +2863,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.09631,
+      "lon": 139.07167
     },
     {
       "id": "jp-cfm-fuji-radiof",
@@ -2496,7 +2878,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.16133,
+      "lon": 138.67628
     },
     {
       "id": "jp-cfm-shimada-gsky",
@@ -2509,7 +2893,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.83628,
+      "lon": 138.17606
     },
     {
       "id": "jp-cfm-izunokuni-fm",
@@ -2522,7 +2908,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.02772,
+      "lon": 138.92886
     },
     {
       "id": "jp-cfm-izu-fmis",
@@ -2535,7 +2923,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.97653,
+      "lon": 138.94681
     },
     {
       "id": "jp-cfm-gotemba-gogofm",
@@ -2548,7 +2938,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.30869,
+      "lon": 138.93461
     },
     {
       "id": "jp-cfm-yaizu-radiolush",
@@ -2561,7 +2953,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.86689,
+      "lon": 138.32325
     },
     {
       "id": "jp-cfm-toyohashi-fm",
@@ -2574,7 +2968,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.76917,
+      "lon": 137.39153
     },
     {
       "id": "jp-cfm-okazaki-egao",
@@ -2587,7 +2983,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.95472,
+      "lon": 137.17303
     },
     {
       "id": "jp-cfm-toyota-loveat",
@@ -2600,7 +2998,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.08242,
+      "lon": 137.15633
     },
     {
       "id": "jp-cfm-kariya-pitchfm",
@@ -2613,7 +3013,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.98928,
+      "lon": 137.00214
     },
     {
       "id": "jp-cfm-seto-radiosanq",
@@ -2626,7 +3028,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.224,
+      "lon": 137.08403
     },
     {
       "id": "jp-cfm-inuyama-unitednorth",
@@ -2639,7 +3043,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.37861,
+      "lon": 136.9445
     },
     {
       "id": "jp-cfm-tokai-mediasfm",
@@ -2652,7 +3058,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.02306,
+      "lon": 136.90219
     },
     {
       "id": "jp-cfm-nagoya-midfm761",
@@ -2665,7 +3073,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.17944,
+      "lon": 136.92611
     },
     {
       "id": "jp-cfm-ichinomiya-iwave",
@@ -2678,7 +3088,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.30389,
+      "lon": 136.80306
     },
     {
       "id": "jp-cfm-kanie-nanami",
@@ -2691,7 +3103,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.16256,
+      "lon": 136.7115
     },
     {
       "id": "jp-cfm-nagoya-heartfm",
@@ -2704,7 +3118,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.16861,
+      "lon": 136.91028
     },
     {
       "id": "jp-cfm-yokkaichi-ctyfm",
@@ -2717,7 +3133,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.96503,
+      "lon": 136.62442
     },
     {
       "id": "jp-cfm-nabari-adsfm",
@@ -2730,7 +3148,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.68083,
+      "lon": 136.04347
     },
     {
       "id": "jp-cfm-suzuka-voicefm",
@@ -2743,7 +3163,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.88197,
+      "lon": 136.58417
     },
     {
       "id": "jp-cfm-inabe-fm",
@@ -2756,7 +3178,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.15819,
+      "lon": 136.51711
     },
     {
       "id": "jp-cfm-kyoto-fm845",
@@ -2769,7 +3193,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 京都リビングエフエム",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.9725,
+      "lon": 135.81361
     },
     {
       "id": "jp-cfm-minoh-tackey816",
@@ -2782,7 +3208,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 箕面FMまちそだて",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.82694,
+      "lon": 135.47044
     },
     {
       "id": "jp-cfm-uji-fmuji",
@@ -2795,7 +3223,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム宇治放送",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.88436,
+      "lon": 135.79981
     },
     {
       "id": "jp-cfm-osaka-yesfm",
@@ -2808,7 +3238,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムちゅうおう",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.68111,
+      "lon": 135.50972
     },
     {
       "id": "jp-cfm-miki-fmmikkii",
@@ -2821,7 +3253,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム三木",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.79692,
+      "lon": 134.99019
     },
     {
       "id": "jp-cfm-amagasaki-fmbloom",
@@ -2834,7 +3268,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: みんなのあま咲き放送局(エフエムあまがさき)",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.73383,
+      "lon": 135.40633
     },
     {
       "id": "jp-cfm-itami-happyfm",
@@ -2847,7 +3283,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 伊丹まち未来",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.78431,
+      "lon": 135.40089
     },
     {
       "id": "jp-cfm-osaka-umedafm",
@@ -2860,7 +3298,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムキタ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.70556,
+      "lon": 135.51
     },
     {
       "id": "jp-cfm-kobe-moovkobe",
@@ -2873,7 +3313,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムムーヴ",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.68972,
+      "lon": 135.195
     },
     {
       "id": "jp-cfm-ayabe-fmikaru",
@@ -2886,7 +3328,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムあやべ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.29886,
+      "lon": 135.25881
     },
     {
       "id": "jp-cfm-nishinomiya-sakurafm",
@@ -2899,7 +3343,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.73764,
+      "lon": 135.34175
     },
     {
       "id": "jp-cfm-shirahama-beachstation",
@@ -2912,7 +3358,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 南紀白浜コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.67814,
+      "lon": 135.34811
     },
     {
       "id": "jp-cfm-toyooka-fmjungle",
@@ -2925,7 +3373,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムたじま",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.5445,
+      "lon": 134.82019
     },
     {
       "id": "jp-cfm-oji-fmhaiho",
@@ -2938,7 +3388,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム西大和",
-      "power_kw": 0.005
+      "power_kw": 0.005,
+      "lat": 34.62919,
+      "lon": 135.70061
     },
     {
       "id": "jp-cfm-nara-naradotfm",
@@ -2951,7 +3403,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 奈良シティエフエムコミュニケーションズ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.685,
+      "lon": 135.80478
     },
     {
       "id": "jp-cfm-takarazuka-hummingfm",
@@ -2964,7 +3418,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム宝塚",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.8,
+      "lon": 135.36031
     },
     {
       "id": "jp-cfm-himeji-fmgenki",
@@ -2977,7 +3433,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 姫路シティFM21",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.81517,
+      "lon": 134.68539
     },
     {
       "id": "jp-cfm-yuasa-fmmothership",
@@ -2990,7 +3448,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.05753,
+      "lon": 135.21617
     },
     {
       "id": "jp-cfm-hikone-biwakohigashi",
@@ -3003,7 +3463,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムひこねコミュニティ放送",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.27436,
+      "lon": 136.25972
     },
     {
       "id": "jp-cfm-kyoto-sanjoradiocafe",
@@ -3016,7 +3478,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 京都コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.01,
+      "lon": 135.75139
     },
     {
       "id": "jp-cfm-higashiomi-radiosweet",
@@ -3029,7 +3493,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: びわ湖キャプテン",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.11258,
+      "lon": 136.20753
     },
     {
       "id": "jp-cfm-toyonaka-fmsenri",
@@ -3042,7 +3508,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 千里ニュータウンFM放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.7815,
+      "lon": 135.46964
     },
     {
       "id": "jp-cfm-kakogawa-banbanradio",
@@ -3055,7 +3523,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: BAN-BANネットワークス",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.75692,
+      "lon": 134.84128
     },
     {
       "id": "jp-cfm-wakayama-bananafm",
@@ -3068,7 +3538,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム和歌山",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.23036,
+      "lon": 135.17075
     },
     {
       "id": "jp-cfm-fukuchiyama-fmtanba",
@@ -3081,7 +3553,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 京都FM丹波放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.29669,
+      "lon": 135.12661
     },
     {
       "id": "jp-cfm-kusatsu-rockets785",
@@ -3094,7 +3568,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: えふえむ草津",
-      "power_kw": 0.005
+      "power_kw": 0.005,
+      "lat": 35.01317,
+      "lon": 135.95989
     },
     {
       "id": "jp-cfm-kyotango-fmtango",
@@ -3107,7 +3583,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 京丹後コミュニティ放送",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.62414,
+      "lon": 135.06094
     },
     {
       "id": "jp-cfm-tanabe-fmtanabe",
@@ -3120,7 +3598,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.72797,
+      "lon": 135.37772
     },
     {
       "id": "jp-cfm-kishiwada-radiokishiwada",
@@ -3133,7 +3613,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.46053,
+      "lon": 135.37092
     },
     {
       "id": "jp-cfm-hashimoto-fmhashimoto",
@@ -3146,7 +3628,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.31464,
+      "lon": 135.60522
     },
     {
       "id": "jp-cfm-tamba-805tamba",
@@ -3159,7 +3643,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: たんばコミュニティネットワーク",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.17708,
+      "lon": 135.03589
     },
     {
       "id": "jp-cfm-maizuru-fmmaizuru",
@@ -3172,7 +3658,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 有本積善社",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.47475,
+      "lon": 135.38597
     },
     {
       "id": "jp-cfm-kyoto-radiomixkyoto",
@@ -3185,7 +3673,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: コミュニティラジオ京都",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.04111,
+      "lon": 135.75417
     },
     {
       "id": "jp-cfm-gojo-fmgojo",
@@ -3198,7 +3688,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 祥水園",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.35633,
+      "lon": 135.69558
     },
     {
       "id": "jp-cfm-izumiotsu-fmizumiotsu",
@@ -3211,7 +3703,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエム泉大津",
-      "power_kw": 0.005
+      "power_kw": 0.005,
+      "lat": 34.50428,
+      "lon": 135.41042
     },
     {
       "id": "jp-cfm-otsu-fmotsu",
@@ -3224,7 +3718,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 35.01779,
+      "lon": 135.85481
     },
     {
       "id": "jp-cfm-nagaokakyo-fmotokuni",
@@ -3237,7 +3733,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.94872,
+      "lon": 135.69828
     },
     {
       "id": "jp-cfm-yamatotakada-fmyamato",
@@ -3250,7 +3748,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: エフエムヤマト",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.51506,
+      "lon": 135.73647
     },
     {
       "id": "jp-cfm-koka-fmhana",
@@ -3263,7 +3763,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 三瀧商店",
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 34.96608,
+      "lon": 136.16631
     },
     {
       "id": "jp-cfm-tawaramoto-fmmahoroba",
@@ -3276,7 +3778,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 田原本まちづくり観光振興機構",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.55661,
+      "lon": 135.795
     },
     {
       "id": "jp-cfm-kawachinagano-okukawachiradio",
@@ -3289,7 +3793,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.45808,
+      "lon": 135.56414
     },
     {
       "id": "jp-cfm-yao-yaofm",
@@ -3302,7 +3808,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 株式会社八尾タイムズ",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.62692,
+      "lon": 135.60083
     },
     {
       "id": "jp-cfm-shingu-fmshingu",
@@ -3315,7 +3823,9 @@
       "language": null,
       "target_area": null,
       "note": "運営: 有限会社フリーク",
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.72417,
+      "lon": 135.99256
     },
     {
       "id": "jp-cfm-fukuyama-bingo",
@@ -3328,7 +3838,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.5046,
+      "lon": 133.35005
     },
     {
       "id": "jp-cfm-hagi-nanako",
@@ -3341,7 +3853,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.40811,
+      "lon": 131.39917
     },
     {
       "id": "jp-cfm-kurashiki-fmkurashiki",
@@ -3354,7 +3868,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.58508,
+      "lon": 133.77211
     },
     {
       "id": "jp-cfm-okayama-momo",
@@ -3367,7 +3883,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.6705,
+      "lon": 133.94314
     },
     {
       "id": "jp-cfm-shimonoseki-comeonfm",
@@ -3380,7 +3898,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.95789,
+      "lon": 130.94133
     },
     {
       "id": "jp-cfm-onomichi-fm794",
@@ -3393,7 +3913,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.40911,
+      "lon": 133.20544
     },
     {
       "id": "jp-cfm-hiroshima-chupea",
@@ -3406,7 +3928,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.37989,
+      "lon": 132.469
     },
     {
       "id": "jp-cfm-ube-kirara",
@@ -3419,7 +3943,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.95158,
+      "lon": 131.24672
     },
     {
       "id": "jp-cfm-izumo-fmizumo",
@@ -3432,7 +3958,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.40162,
+      "lon": 132.68544
     },
     {
       "id": "jp-cfm-shunan-fm",
@@ -3445,7 +3973,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.05506,
+      "lon": 131.80622
     },
     {
       "id": "jp-cfm-hofu-wasshoi",
@@ -3458,7 +3988,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.05128,
+      "lon": 131.56256
     },
     {
       "id": "jp-cfm-nagato-aqua",
@@ -3471,7 +4003,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.37053,
+      "lon": 131.18256
     },
     {
       "id": "jp-cfm-kasaoka-yumewave",
@@ -3484,7 +4018,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.50714,
+      "lon": 133.50736
     },
     {
       "id": "jp-cfm-tottori-radiobird",
@@ -3497,7 +4033,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.49439,
+      "lon": 134.22161
     },
     {
       "id": "jp-cfm-hatsukaichi-fmhatsukaichi",
@@ -3510,7 +4048,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.34822,
+      "lon": 132.33158
     },
     {
       "id": "jp-cfm-hiroshima-hamster",
@@ -3523,7 +4063,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.45186,
+      "lon": 132.47164
     },
     {
       "id": "jp-cfm-tsuyama-fmtsuyama",
@@ -3536,7 +4078,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.06911,
+      "lon": 134.00447
     },
     {
       "id": "jp-cfm-yonago-darazfm",
@@ -3549,7 +4093,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 35.51069,
+      "lon": 133.49606
     },
     {
       "id": "jp-cfm-higashihiroshima-fm",
@@ -3562,7 +4108,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.42639,
+      "lon": 132.74333
     },
     {
       "id": "jp-cfm-sanyoonoda-smilewave",
@@ -3575,7 +4123,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.00317,
+      "lon": 131.18181
     },
     {
       "id": "jp-cfm-mihara-forlife",
@@ -3588,7 +4138,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.39739,
+      "lon": 133.07869
     },
     {
       "id": "jp-cfm-sakaide-fmsun",
@@ -3601,7 +4153,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.31056,
+      "lon": 133.82556
     },
     {
       "id": "jp-cfm-takamatsu-fm815",
@@ -3614,7 +4168,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.34281,
+      "lon": 134.04661
     },
     {
       "id": "jp-cfm-tokushima-bfm791",
@@ -3627,7 +4183,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.07028,
+      "lon": 134.55494
     },
     {
       "id": "jp-cfm-kochi-whalestation",
@@ -3640,7 +4198,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.55883,
+      "lon": 133.53122
     },
     {
       "id": "jp-cfm-imabari-baribari",
@@ -3653,7 +4213,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.06617,
+      "lon": 132.99778
     },
     {
       "id": "jp-cfm-uwajima-gaiya",
@@ -3666,7 +4228,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.22331,
+      "lon": 132.56056
     },
     {
       "id": "jp-cfm-niihama-hellonew",
@@ -3679,7 +4243,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.96033,
+      "lon": 133.28339
     },
     {
       "id": "jp-cfm-shimanto-hatarando",
@@ -3692,7 +4258,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.99128,
+      "lon": 132.93369
     },
     {
       "id": "jp-cfm-kurume-dreams",
@@ -3705,7 +4273,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.31925,
+      "lon": 130.50833
     },
     {
       "id": "jp-cfm-kitakyushu-kitaq",
@@ -3718,7 +4288,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.88083,
+      "lon": 130.87361
     },
     {
       "id": "jp-cfm-kitakyushu-hibiki",
@@ -3731,7 +4303,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.86139,
+      "lon": 130.76028
     },
     {
       "id": "jp-cfm-yame-fmyame",
@@ -3744,7 +4318,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.212,
+      "lon": 130.55786
     },
     {
       "id": "jp-cfm-fukuoka-tenjin",
@@ -3757,7 +4333,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.58919,
+      "lon": 130.39281
     },
     {
       "id": "jp-cfm-omuta-tanto",
@@ -3770,7 +4348,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.03028,
+      "lon": 130.44597
     },
     {
       "id": "jp-cfm-nogata-chokuraji",
@@ -3783,7 +4363,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.74414,
+      "lon": 130.72967
     },
     {
       "id": "jp-cfm-karatsu-fmkaratsu",
@@ -3796,7 +4378,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.45008,
+      "lon": 129.96825
     },
     {
       "id": "jp-cfm-saga-ebisu",
@@ -3809,7 +4393,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.2635,
+      "lon": 130.30083
     },
     {
       "id": "jp-cfm-isahaya-rainbow",
@@ -3822,7 +4408,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.84339,
+      "lon": 130.05314
     },
     {
       "id": "jp-cfm-nagasaki-shimin",
@@ -3835,7 +4423,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.74953,
+      "lon": 129.87964
     },
     {
       "id": "jp-cfm-sasebo-happy",
@@ -3848,7 +4438,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.18,
+      "lon": 129.715
     },
     {
       "id": "jp-cfm-shimabara-fmshimabara",
@@ -3861,7 +4453,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.78814,
+      "lon": 130.37025
     },
     {
       "id": "jp-cfm-omura-silk",
@@ -3874,7 +4468,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.9,
+      "lon": 129.95833
     },
     {
       "id": "jp-cfm-iki-fmiki",
@@ -3887,7 +4483,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.74992,
+      "lon": 129.69133
     },
     {
       "id": "jp-cfm-minamishimabara-himawari",
@@ -3900,7 +4498,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.65981,
+      "lon": 130.29778
     },
     {
       "id": "jp-cfm-goto-fm",
@@ -3913,7 +4513,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.69556,
+      "lon": 128.84081
     },
     {
       "id": "jp-cfm-tsushima-fm",
@@ -3926,7 +4528,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 34.20278,
+      "lon": 129.28753
     },
     {
       "id": "jp-cfm-kumamoto-fm791",
@@ -3939,7 +4543,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.77639,
+      "lon": 130.6475
     },
     {
       "id": "jp-cfm-yatsushiro-kappa",
@@ -3952,7 +4558,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.50756,
+      "lon": 130.60172
     },
     {
       "id": "jp-cfm-oguni-greenpocket",
@@ -3965,7 +4573,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.12158,
+      "lon": 131.06814
     },
     {
       "id": "jp-cfm-amakusa-mitsubachi",
@@ -3978,7 +4588,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 32.45867,
+      "lon": 130.193
     },
     {
       "id": "jp-cfm-nakatsu-noas",
@@ -3991,7 +4603,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.59831,
+      "lon": 131.18828
     },
     {
       "id": "jp-cfm-saiki-fmsaiki",
@@ -4004,7 +4618,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.92292,
+      "lon": 131.83805
     },
     {
       "id": "jp-cfm-yufu-yufuin",
@@ -4017,7 +4633,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 33.18008,
+      "lon": 131.42678
     },
     {
       "id": "jp-cfm-kitsuki-802",
@@ -4030,7 +4648,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 33.417,
+      "lon": 131.61614
     },
     {
       "id": "jp-cfm-miyazaki-sunshine",
@@ -4043,7 +4663,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.90772,
+      "lon": 131.42019
     },
     {
       "id": "jp-cfm-nobeoka-fmnobeoka",
@@ -4056,7 +4678,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.58228,
+      "lon": 131.66489
     },
     {
       "id": "jp-cfm-hyuga-fmhyuga",
@@ -4069,7 +4693,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 32.40006,
+      "lon": 131.57335
     },
     {
       "id": "jp-cfm-kagoshima-friends",
@@ -4082,7 +4708,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.59681,
+      "lon": 130.55714
     },
     {
       "id": "jp-cfm-kanoya-fmkanoya",
@@ -4095,7 +4723,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.37822,
+      "lon": 130.85222
     },
     {
       "id": "jp-cfm-kimotsuki-fmkimotsuki",
@@ -4108,7 +4738,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.34444,
+      "lon": 130.94522
     },
     {
       "id": "jp-cfm-shibushi-fmshibushi",
@@ -4121,7 +4753,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 31.47717,
+      "lon": 131.09989
     },
     {
       "id": "jp-cfm-amami-dwave",
@@ -4134,7 +4768,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 28.36139,
+      "lon": 129.49802
     },
     {
       "id": "jp-cfm-tarumizu-fmtarumizu",
@@ -4147,7 +4783,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.49278,
+      "lon": 130.70094
     },
     {
       "id": "jp-cfm-uken-fmuken",
@@ -4160,7 +4798,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 28.28081,
+      "lon": 129.29717
     },
     {
       "id": "jp-cfm-satsumasendai-fm",
@@ -4173,7 +4813,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.81347,
+      "lon": 130.30397
     },
     {
       "id": "jp-cfm-kirishima-fmkirishima",
@@ -4186,7 +4828,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.741,
+      "lon": 130.76322
     },
     {
       "id": "jp-cfm-tatsugo-fmtatsugo",
@@ -4199,7 +4843,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 28.41311,
+      "lon": 129.58933
     },
     {
       "id": "jp-cfm-soo-good",
@@ -4212,7 +4858,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 31.65364,
+      "lon": 131.01936
     },
     {
       "id": "jp-cfm-aira-abview",
@@ -4225,7 +4873,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 31.72822,
+      "lon": 130.62781
     },
     {
       "id": "jp-cfm-osaki-fmosaki",
@@ -4238,7 +4888,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 31.42922,
+      "lon": 131.00586
     },
     {
       "id": "jp-cfm-itoman-taman",
@@ -4251,7 +4903,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 26.1235,
+      "lon": 127.66578
     },
     {
       "id": "jp-cfm-urasoe-fm21",
@@ -4264,7 +4918,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.24569,
+      "lon": 127.72186
     },
     {
       "id": "jp-cfm-naha-fmnaha",
@@ -4277,7 +4933,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.19111,
+      "lon": 127.7285
     },
     {
       "id": "jp-cfm-miyakojima-fmmiyako",
@@ -4290,7 +4948,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 24.79006,
+      "lon": 125.29489
     },
     {
       "id": "jp-cfm-okinawashi-koza",
@@ -4303,7 +4963,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.01
+      "power_kw": 0.01,
+      "lat": 26.33428,
+      "lon": 127.80572
     },
     {
       "id": "jp-cfm-naha-rekio",
@@ -4316,7 +4978,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.21222,
+      "lon": 127.67917
     },
     {
       "id": "jp-cfm-ishigaki-sansan",
@@ -4329,7 +4993,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 24.3445,
+      "lon": 124.18525
     },
     {
       "id": "jp-cfm-tomigusuku-fmtoyomi",
@@ -4342,7 +5008,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.17717,
+      "lon": 127.68125
     },
     {
       "id": "jp-cfm-yomitan-fmyomitan",
@@ -4355,7 +5023,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.39606,
+      "lon": 127.74439
     },
     {
       "id": "jp-cfm-okinawashi-okiradi",
@@ -4368,7 +5038,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.33428,
+      "lon": 127.80572
     },
     {
       "id": "jp-cfm-uruma-fmuruma",
@@ -4381,7 +5053,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.37917,
+      "lon": 127.85742
     },
     {
       "id": "jp-cfm-nago-yanbaru",
@@ -4394,7 +5068,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.59156,
+      "lon": 127.97756
     },
     {
       "id": "jp-cfm-motobu-churaheart",
@@ -4407,7 +5083,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.6575,
+      "lon": 127.89778
     },
     {
       "id": "jp-cfm-kumejima-fmkumejima",
@@ -4420,7 +5098,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.08
+      "power_kw": 0.08,
+      "lat": 26.34069,
+      "lon": 126.80494
     },
     {
       "id": "jp-cfm-ginowan-fmginowan",
@@ -4433,7 +5113,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.2815,
+      "lon": 127.77853
     },
     {
       "id": "jp-cfm-ginowan-cityfm",
@@ -4446,7 +5128,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.2815,
+      "lon": 127.77853
     },
     {
       "id": "jp-cfm-yonabaru-fmyonabaru",
@@ -4459,7 +5143,9 @@
       "language": null,
       "target_area": null,
       "note": null,
-      "power_kw": 0.02
+      "power_kw": 0.02,
+      "lat": 26.19111,
+      "lon": 127.7285
     }
   ]
 }

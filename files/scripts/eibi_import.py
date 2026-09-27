@@ -5,7 +5,8 @@
 ファクス・気象通報などの業務局、妨害電波、デジタル(DRM)放送、周波数を頻繁に変える局は除く。
 国内のラジオNIKKEIは jp_sw_stations.json(総務省の免許情報ベース)で扱うのでここでは除く。
 
-同じ周波数・同じ局の放送時間帯はまとめて1件にし、時間帯・言語・対象地域を note に書く。
+同じ周波数・同じ局・同じ送信所の放送時間帯はまとめて1件にし、時間帯・言語・対象地域を note に書く。
+送信所の座標(lat/lon)は README.TXT の送信所一覧から取る。
 短波のスケジュールは季節(A: 3月末〜10月末、B: 10月末〜3月末)ごとに変わるため、
 シーズンが替わったら再実行する。
 
@@ -20,6 +21,7 @@ import csv
 import datetime
 import hashlib
 import io
+import math
 import re
 import sys
 import urllib.request
@@ -172,8 +174,46 @@ def parse_languages(readme):
     return names
 
 
+# 送信所の座標。例: 36N10-139E50 / 35N28'47"-140E13'11"
+COORD_RE = re.compile(
+    r"(\d{1,2})([NS])(\d{1,2})(?:'(\d{1,2}(?:\.\d+)?)\"?)?-(\d{1,3})([EW])(\d{1,2})(?:'(\d{1,2}(?:\.\d+)?)\"?)?"
+)
+
+
+def parse_coord(text):
+    m = COORD_RE.search(text)
+    if not m:
+        return None, None
+    lat_d, ns, lat_m, lat_s, lon_d, ew, lon_m, lon_s = m.groups()
+    lat = int(lat_d) + int(lat_m) / 60 + float(lat_s or 0) / 3600
+    lon = int(lon_d) + int(lon_m) / 60 + float(lon_s or 0) / 3600
+    return round(-lat if ns == "S" else lat, 5), round(-lon if ew == "W" else lon, 5)
+
+
+def distance_km(lat1, lon1, lat2, lon2):
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    a = math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2
+    return 2 * 6371.0 * math.asin(math.sqrt(a))
+
+
+def country_centroids(sites, max_spread_km=500):
+    """送信所の記号が無く国だけ分かる放送(例: /KWT)の位置として、その国の送信所の平均位置を使う。
+    国内の送信所が狭い範囲に収まる国だけ(中国のように広い国は位置を決めない)。"""
+    points = defaultdict(list)
+    for (country, _), (_, lat, lon) in sites.items():
+        if lat is not None:
+            points[country].append((lat, lon))
+    centroids = {}
+    for country, pts in points.items():
+        lat = sum(p[0] for p in pts) / len(pts)
+        lon = sum(p[1] for p in pts) / len(pts)
+        if all(distance_km(lat, lon, p[0], p[1]) <= max_spread_km for p in pts):
+            centroids[country] = (round(lat, 5), round(lon, 5))
+    return centroids
+
+
 def parse_sites(readme):
-    """README の「IV) Transmitter site codes」から {(国, 記号): 地名} を作る。"""
+    """README の「IV) Transmitter site codes」から {(国, 記号): (地名, 緯度, 経度)} を作る。"""
     section = readme[readme.rfind("IV) Transmitter site codes"):]
     sites = {}
     country = None
@@ -184,6 +224,7 @@ def parse_sites(readme):
             text = m.group(1)
         else:
             continue
+        lat, lon = parse_coord(text)
         text = re.split(r"\s+\d{1,3}[NS]\d", text)[0].strip()
         if m := re.match(r"^([A-Za-z0-9]{1,3})-(.+)$", text):
             code, name = m.group(1), m.group(2)
@@ -193,7 +234,7 @@ def parse_sites(readme):
             continue
         # 地名の後ろの付記(括弧書き・局番・出力など)は省く: 'Beijing-Matoucun "572" (100 kW CNR1)' → 'Beijing-Matoucun'
         name = re.split(r'\s+[("]', name)[0]
-        sites[(country, code)] = re.sub(r"\s+\d+\s*kW$", "", name).strip(" ,")
+        sites[(country, code)] = (re.sub(r"\s+\d+\s*kW$", "", name).strip(" ,"), lat, lon)
     return sites
 
 
@@ -219,18 +260,22 @@ def active_on(row, day, season):
     return True
 
 
-def site_label(row, sites):
+def locate_site(row, sites, centroids):
+    """送信所の (表示名, 緯度, 経度)。座標が分からなければ緯度・経度は None。"""
     remark = row["Remarks"].strip()
     home = row["ITU"].strip()
     if m := re.match(r"^/([A-Z]{1,3})(?:-(\w+))?", remark):
         country, code = m.group(1), m.group(2) or ""
     else:
         country, code = home, remark if re.fullmatch(r"\w{1,3}", remark) else ""
+    site = sites.get((country, code)) or (sites.get((country, "")) if not code else None)
+    name, lat, lon = site or (None, None, None)
+    if site is None and not code:
+        lat, lon = centroids.get(country, (None, None))
     if (country, code) in SITE_NAMES:
-        return SITE_NAMES[(country, code)]
-    name = sites.get((country, code)) or (sites.get((country, "")) if not code else None)
+        return SITE_NAMES[(country, code)], lat, lon
     country_name = COUNTRIES.get(country, country)
-    return f"{name}({country_name})" if name else country_name
+    return (f"{name}({country_name})" if name else country_name), lat, lon
 
 
 def jst(hhmm):
@@ -277,6 +322,7 @@ def describe(blocks, languages):
 
 
 def build(rows, sites, languages, season, day, valid_until):
+    centroids = country_centroids(sites)
     groups = defaultdict(list)
     for row in rows:
         freq = float(row["kHz"])
@@ -294,36 +340,39 @@ def build(rows, sites, languages, season, day, valid_until):
         if lang != "J" and target not in TARGETS:
             continue
         start, end = row["Time(UTC)"].split("-")
-        groups[(band, freq, STATION_NAMES.get(station, station))].append({
+        # 同じ周波数・同じ局でも送信所が違えば距離が違うので、送信所ごとに分ける
+        site, lat, lon = locate_site(row, sites, centroids)
+        groups[(band, freq, STATION_NAMES.get(station, station), site, lat, lon)].append({
             "station": station,
             "start": start, "end": end, "lang": lang, "target": target,
-            "days": row["Days"].strip(), "site": site_label(row, sites),
+            "days": row["Days"].strip(),
         })
 
     stations = []
-    for (band, freq, name), blocks in groups.items():
+    for (band, freq, name, site, lat, lon), blocks in groups.items():
         station = Counter(b["station"] for b in blocks).most_common(1)[0][0]
         merged = merge_blocks(blocks)
         langs = Counter(b["lang"] for b in merged)
         targets = Counter(b["target"] for b in merged)
-        site_names = list(dict.fromkeys(b["site"] for b in blocks))
         note = describe(merged, languages)
         if any(b["days"] for b in merged):
             note += "。曜日はUTC基準"
         note += f"。EiBi {season}(〜{valid_until})準拠。季節により変わる"
-        digest = hashlib.sha1(name.encode()).hexdigest()[:6]
+        digest = hashlib.sha1(f"{name}|{site}".encode()).hexdigest()[:6]
         stations.append(stationdata.station(
             id=f"eibi-{band.lower()}-{freq:g}-{digest}",
             band=band,
             freq_khz=freq,
             name=name,
-            area="送信所: " + "、".join(site_names),
+            area=f"送信所: {site}",
             network=station,
             language="、".join(languages.get(l, l) for l, _ in langs.most_common()),
             target_area="、".join(TARGET_NAMES.get(t, t) for t, _ in targets.most_common()),
             note=note,
+            lat=lat,
+            lon=lon,
         ))
-    stations.sort(key=lambda s: (s["band"], s["freq_khz"], s["name"]))
+    stations.sort(key=lambda s: (s["band"], s["freq_khz"], s["name"], s["area"]))
     ids = [s["id"] for s in stations]
     assert len(ids) == len(set(ids)), "id が重複している"
     return stations
@@ -356,11 +405,12 @@ def main():
         "_readme": (
             f"EiBi Shortwave Schedules の {season} シーズン(sked-{season.lower()}.csv、{args.date.isoformat()} 時点で有効な放送)から生成した、"
             "日本で受信されやすい国際放送(日本語の放送、または日本・極東・朝鮮半島・中国向けの放送)。"
-            "短波(SW)と中波(AM)の国際放送を含む。同じ周波数・同じ局の時間帯は1件にまとめ、note に時間帯・言語・対象地域を記載。"
+            "短波(SW)と中波(AM)の国際放送を含む。同じ周波数・同じ局・同じ送信所の時間帯は1件にまとめ、note に時間帯・言語・対象地域を記載。"
+            "lat/lon は送信所の座標(README.TXT の送信所一覧。送信所が国しか分からないものは、その国の送信所の平均位置)。"
             "files/scripts/eibi_import.py で再生成するため手で編集しないこと。"
             "EiBi のデータは自由に利用・再配布できる(README.TXT の Conditions of use)。"
         ),
-        "_schema_version": 3,
+        "_schema_version": 4,
         "_season": season,
         "stations": stations,
     }

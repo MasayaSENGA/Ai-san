@@ -9,19 +9,21 @@
 | `jp_sw_stations.json` | 国内の短波放送(ラジオNIKKEI第1・第2の7送信) | 7 | 手で編集 |
 | `afn_stations.json` | 在日米軍AFNのラジオ局(AM・FM) | 6 | 手で編集 |
 | `mic_stations.json` | 上記に無い国内の放送局(NHK・民放の中継局、FM補完中継局、コミュニティFMの中継局、受信障害対策中継局、臨時災害放送局、関東各県のNHK FMなど上記に無い親局) | 1,422 | `scripts/mic_import.py` で生成 |
-| `intl_stations.json` | 日本で受信されやすい国際放送(日本語放送、日本・極東・朝鮮半島・中国向けの短波放送と中波の国際放送) | 499 | `scripts/eibi_import.py` で生成 |
-| `radio_stations.db` | 上記を統合したSQLite(単一テーブル `stations`、計2,448局)。Androidにそのまま同梱 | 2,448 | `scripts/build_db.py` で生成 |
+| `intl_stations.json` | 日本で受信されやすい国際放送(日本語放送、日本・極東・朝鮮半島・中国向けの短波放送と中波の国際放送)。同じ周波数・同じ局でも送信所ごとに1件 | 510 | `scripts/eibi_import.py` で生成 |
+| `municipality_coords.json` | 市区町村の代表点の座標(送信所の所在地を緯度経度に変換するための対照表) | 1,912市区町村 | `scripts/geo_import.py` で生成 |
+| `radio_stations.db` | 局データのJSONを統合したSQLite(単一テーブル `stations`、計2,459局)。Androidにそのまま同梱 | 2,459 | `scripts/build_db.py` で生成 |
 
-各JSONの局オブジェクトは `stations` テーブルと同じ列構成です。
+局データの各JSONの局オブジェクトは `stations` テーブルと同じ列構成です。
 
 ```
-id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw
+id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw, lat, lon
 ```
 
 - `freq_khz`: AM/FM/SWとも kHz 単位(FMはMHz値×1000)
 - `area`: 国内局は親局を都道府県名、中継局などを送信所の市区町村で表記。国際放送は `送信所: 地名(国)`
 - `network`: `NHK` / `JRN` / `NRN` / `JRN/NRN` / `JFN` / `JFL` / `independent` / `community` / `AFN`。国際放送はEiBi上の局名
 - `power_kw`: 送信出力(空中線電力、kW)。国内局は総務省の免許情報の値。国際放送は `null`
+- `lat` / `lon`: 送信所の座標(アプリの「現在地から近い順」に使う)。国内局は免許情報の送信所の所在地(市区町村)の代表点、国際放送はEiBiの送信所の座標。不明な局は `null`(現在は全局に座標あり)
 - 国際放送の `note` には放送時間(UTCと日本時間)・言語・対象地域を記載
 
 ## データの出所
@@ -36,6 +38,9 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
 - **国際放送**: [EiBi Shortwave Schedules](http://www.eibispace.de/) の A26 シーズン(2026年3月29日〜10月25日、2026年8月31日更新版)。2026年9月27日時点で有効な放送を取り込んだ。EiBiのデータは自由に利用・再配布できる。
   - ファクス・気象通報などの業務局、妨害電波、デジタル(DRM)放送、周波数を頻繁に変える希望之声(Sound of Hope)は除外。
 - **コミュニティFMの局名**: Wikipedia「コミュニティ放送局一覧」
+- **市区町村の座標**: [Wikidata](https://www.wikidata.org/)(CC0)の全国地方公共団体コード(P429)と座標(P625)。2026年9月27日に取得。座標が複数ある市区町村(76件)は、その中点を使う。
+- **送信所の所在地**: 免許情報の「無線設備の設置場所」には送信所のほかに演奏所(本社)や予備送信所も並び、どれが先頭かは免許によって違う。設置場所が複数ある免許を2件以上持つ免許人は、それらすべてに現れる場所を演奏所とみなし、それ以外の最初の場所を送信所としている(例: MBSラジオは本社の大阪市北区ではなく高石市)。演奏所を決められない免許人(NHKや、設置場所が複数ある免許が1件だけの免許人)は最初の場所を使い、違うと確かめた局は `mic_import.py` の `TRANSMITTER_OVERRIDES` で直している(Kiss FM KOBE → 神戸市灘区、e-radio → 湖南市)。
+- **国際放送の送信所の座標**: EiBi の README.TXT の送信所一覧(Transmitter site codes)
 
 総務省のWeb-APIで取得した情報を使うサービスでは、利用規約により次の文言の表示が必要です(アプリの検索結果の下に表示しています)。
 
@@ -47,10 +52,19 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
 - 民放AM局の運用休止は2026年9月30日までとされています。10月以降の扱い(延長・再開・廃止)が決まったら注記の更新が必要です。
 - 受信障害対策中継局(自治体などが難聴地域向けに設ける中継局)は、同じ市区町村・都道府県に同じ周波数の局がある場合にその局の中継とみなしています。中継元を特定できないものは「受信障害対策中継局」として収録しています。
 - 同じ市区町村・同じ周波数・同じ局名の送信所は1件にまとめています(件数は `note` に記載)。
+- 国内局の座標は送信所がある市区町村の代表点で、実際の送信所(山頂など)とは数km〜十数kmずれることがあります。面積の広い市町村ほどずれが大きくなります。
+- 国際放送で送信所が国名しか分からないもの(例: クウェートからの中継)は、その国の送信所の平均位置を使っています(国内の送信所が狭い範囲に収まる国のみ)。
+- AFNの座標は `municipality_coords.json` の値(AFN Okinawa のFMはキャンプ・フォスターの座標)を手で入れています。`mic_import.py` は更新しないので、`geo_import.py` を再実行したら見直してください。
 
 ## データを更新する方法
 
 `files/scripts/` のスクリプトはPython 3.8以上の標準ライブラリだけで動きます。
+
+0. 市区町村の座標を更新する(市町村の合併などがあったとき)
+
+   ```sh
+   python3 files/scripts/geo_import.py
+   ```
 
 1. 国内局を総務省の免許情報で更新する(API へのアクセスは3秒間隔、計7リクエスト程度)
 
@@ -58,7 +72,8 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
    python3 files/scripts/mic_import.py
    ```
 
-   `mic_stations.json` を作り直し、手で整備したファイルの `power_kw` を免許情報の値に更新します。
+   `mic_stations.json` を作り直し、手で整備したファイルの `power_kw` と `lat`・`lon` を免許情報の値に更新します。
+   送信所の所在地が `municipality_coords.json` に見つからない場合は止まるので、`geo_import.py` を再実行するか、表記ゆれを `stationdata.py` の `LOCATION_ALIASES` に追加します。
    手で整備した局が免許情報に見当たらない場合や、コールサインが食い違う場合、AMの運用休止中なのに注記が無い場合は `[要確認]` として表示されるので、該当するJSONを手で直します。
    未登録の免許人(新しい放送局)があると止まるので、`LICENSEES` に局名と系列を追加します。
 

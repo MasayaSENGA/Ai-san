@@ -1,6 +1,6 @@
 {
-  "_readme": "在日米軍向けのAFN(American Forces Network)のラジオ局。日米地位協定により電波法の適用外で、総務省の免許情報には含まれない。周波数・出力・送信所はWikipedia「AFN」(2026年1月時点の記述)による。",
-  "_schema_version": 1,
+  "_readme": "在日米軍向けのAFN(American Forces Network)のラジオ局。日米地位協定により電波法の適用外で、総務省の免許情報には含まれない。周波数・出力・送信所はWikipedia「AFN」(2026年1月時点の記述)による。lat/lon は送信所の所在地(市)の代表点の座標(municipality_coords.json)。AFN Okinawa(FM)はキャンプ・フォスターの座標(Wikipedia/Wikidata Q4419750)。",
+  "_schema_version": 2,
   "stations": [
     {
       "id": "afn-tokyo-810",
@@ -13,7 +13,9 @@
       "language": "English",
       "target_area": null,
       "note": "在日米軍向けの英語放送。横田基地の放送局で、送信所は埼玉県和光市。夜間は広い範囲で受信できる。",
-      "power_kw": 50.0
+      "power_kw": 50.0,
+      "lat": 35.78122,
+      "lon": 139.60569
     },
     {
       "id": "afn-misawa-1575",
@@ -26,7 +28,9 @@
       "language": "English",
       "target_area": null,
       "note": "在日米軍向けの英語放送(三沢基地)。",
-      "power_kw": 1.0
+      "power_kw": 1.0,
+      "lat": 40.68308,
+      "lon": 141.36906
     },
     {
       "id": "afn-iwakuni-1575",
@@ -39,7 +43,9 @@
       "language": "English",
       "target_area": null,
       "note": "在日米軍向けの英語放送(岩国基地)。",
-      "power_kw": 1.0
+      "power_kw": 1.0,
+      "lat": 34.16658,
+      "lon": 132.21883
     },
     {
       "id": "afn-sasebo-931",
@@ -52,7 +58,9 @@
       "language": "English",
       "target_area": null,
       "note": "在日米軍向けの英語放送(佐世保基地)。2025年6月からFMで放送。",
-      "power_kw": 0.3
+      "power_kw": 0.3,
+      "lat": 33.18,
+      "lon": 129.715
     },
     {
       "id": "afn-okinawa-891",
@@ -65,7 +73,9 @@
       "language": "English",
       "target_area": null,
       "note": "在日米軍向けの英語放送。送信所はキャンプ・フォスター。",
-      "power_kw": 1.0
+      "power_kw": 1.0,
+      "lat": 26.30139,
+      "lon": 127.77972
     },
     {
       "id": "afn-okinawa-648",
@@ -78,7 +88,9 @@
       "language": "English",
       "target_area": null,
       "note": "送信所はキャンプ・キンザー。落雷による設備損傷のため2024年6月から停波中(2026年1月時点)。",
-      "power_kw": 10.0
+      "power_kw": 10.0,
+      "lat": 26.24569,
+      "lon": 127.72186
     }
   ]
 }

@@ -1,18 +1,29 @@
 package com.aisan.radio
 
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.content.ContextWrapper
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Card
@@ -25,22 +36,35 @@ import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ActivityCompat
 import com.aisan.radio.data.Station
+import com.aisan.radio.location.CurrentLocation
 import com.aisan.radio.ui.Band
+import com.aisan.radio.ui.GeoPoint
 import com.aisan.radio.ui.StationViewModel
+import com.aisan.radio.ui.distanceKmFrom
 import java.math.BigDecimal
 import java.math.MathContext
+import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
     private val viewModel: StationViewModel by viewModels()
@@ -56,12 +80,26 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.onResume()
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun StationScreen(viewModel: StationViewModel) {
     val uiState by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
+    var rationaleBeforeRequest by rememberSaveable { mutableStateOf(false) }
+    val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) {
+            viewModel.onLocationPermissionGranted()
+        } else {
+            viewModel.onLocationPermissionDenied(rationaleBeforeRequest, context.shouldShowLocationRationale())
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -114,6 +152,30 @@ fun StationScreen(viewModel: StationViewModel) {
                 Text("検索")
             }
 
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                SortByDistanceSwitch(
+                    checked = uiState.sortByDistance,
+                    onCheckedChange = { enabled ->
+                        if (!enabled || CurrentLocation.hasPermission(context)) {
+                            viewModel.onSortByDistanceChanged(enabled)
+                        } else {
+                            rationaleBeforeRequest = context.shouldShowLocationRationale()
+                            // 距離順に並べるだけなので、おおよその位置情報で足りる
+                            permissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
+                        }
+                    }
+                )
+                val locationStatus = if (uiState.sortByDistance && uiState.locating) "現在地を取得中…" else uiState.locationMessage
+                locationStatus?.let {
+                    Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+                if (uiState.locationPermissionBlocked) {
+                    TextButton(onClick = { context.openAppSettings() }) {
+                        Text("設定を開く")
+                    }
+                }
+            }
+
             if (uiState.searched && uiState.results.isEmpty()) {
                 Text(
                     "該当する放送局が見つかりませんでした",
@@ -127,7 +189,7 @@ fun StationScreen(viewModel: StationViewModel) {
                 contentPadding = PaddingValues(bottom = 16.dp)
             ) {
                 items(uiState.results) { station ->
-                    StationCard(station, uiState.band)
+                    StationCard(station, uiState.band, uiState.origin)
                 }
                 item {
                     DataSourceNotice()
@@ -137,15 +199,52 @@ fun StationScreen(viewModel: StationViewModel) {
     }
 }
 
+private tailrec fun Context.findActivity(): Activity? = when (this) {
+    is Activity -> this
+    is ContextWrapper -> baseContext.findActivity()
+    else -> null
+}
+
+private fun Context.shouldShowLocationRationale(): Boolean {
+    val activity = findActivity() ?: return false
+    return ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_COARSE_LOCATION)
+}
+
+// このアプリの詳細設定画面(権限の許可はここから行う)
+private fun Context.openAppSettings() {
+    startActivity(
+        Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", packageName, null))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    )
+}
+
 @Composable
-fun StationCard(station: Station, band: Band) {
+fun SortByDistanceSwitch(checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .toggleable(value = checked, role = Role.Switch, onValueChange = onCheckedChange),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text("現在地から近い順に並べる", style = MaterialTheme.typography.bodyLarge)
+        Switch(checked = checked, onCheckedChange = null)
+    }
+}
+
+@Composable
+fun StationCard(station: Station, band: Band, origin: GeoPoint?) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors()
     ) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(station.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-            Text(formatFrequency(station.freq_khz, band), style = MaterialTheme.typography.bodyMedium)
+            val distance = origin?.let { station.distanceKmFrom(it) }?.let(::formatDistance)
+            Text(
+                listOfNotNull(formatFrequency(station.freq_khz, band), distance).joinToString(" ・ "),
+                style = MaterialTheme.typography.bodyMedium
+            )
 
             val subInfo = listOfNotNull(
                 station.area,
@@ -168,7 +267,7 @@ fun StationCard(station: Station, band: Band) {
 @Composable
 fun DataSourceNotice() {
     Text(
-        "出典: 総務省 電波利用ポータル、EiBi Shortwave Schedules、Wikipedia。" +
+        "出典: 総務省 電波利用ポータル、EiBi Shortwave Schedules、Wikipedia、Wikidata。" +
             "このサービスは、総務省 電波利用ポータルのWeb-API 機能を利用して取得した情報をもとに作成しているが、" +
             "サービスの内容は総務省によって保証されたものではない。",
         style = MaterialTheme.typography.bodySmall,
@@ -183,6 +282,10 @@ private fun formatPower(powerKw: Double): String {
     val digits = BigDecimal.valueOf(value).round(MathContext(3)).stripTrailingZeros().toPlainString()
     return "出力 $digits$unit"
 }
+
+// 局の座標は送信所の市区町村の代表点なので、km単位の目安として表示する
+private fun formatDistance(km: Double): String =
+    if (km < 1.0) "現在地から1km未満" else "現在地から約%,dkm".format(km.roundToInt())
 
 private fun formatFrequency(freqKhz: Double?, band: Band): String {
     if (freqKhz == null) return "-"

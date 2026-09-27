@@ -1,6 +1,7 @@
 """局データJSON(files/*.json)の読み書きと共通定義。"""
 
 import json
+import re
 from pathlib import Path
 
 FILES_DIR = Path(__file__).resolve().parent.parent
@@ -8,8 +9,22 @@ FILES_DIR = Path(__file__).resolve().parent.parent
 # stations テーブルの列順。JSON の各局オブジェクトもこの順でキーを並べる。
 COLUMNS = [
     "id", "band", "freq_khz", "name", "area", "callsign", "network",
-    "language", "target_area", "note", "power_kw",
+    "language", "target_area", "note", "power_kw", "lat", "lon",
 ]
+
+# 都道府県コード(JIS X 0401)順
+PREFECTURES = [
+    "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県",
+    "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県", "石川県", "福井県", "山梨県", "長野県",
+    "岐阜県", "静岡県", "愛知県", "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県",
+    "鳥取県", "島根県", "岡山県", "広島県", "山口県", "徳島県", "香川県", "愛媛県", "高知県", "福岡県",
+    "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県",
+]
+
+# 免許情報の所在地の表記ゆれ
+LOCATION_ALIASES = {
+    "東京都八丈島八丈町": "東京都八丈町",
+}
 
 
 def station(**fields):
@@ -29,3 +44,21 @@ def save(path, data):
     # 既存ファイルと同じ書式(indent=2、非ASCIIはそのまま、末尾改行なし)で書き出す
     with open(path, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def load_municipality_coords():
+    return load(FILES_DIR / "municipality_coords.json")["municipalities"]
+
+
+def locate(location, coords):
+    """「北海道河東郡音更町」のような所在地を (緯度, 経度) にする。見つからなければ None。"""
+    location = LOCATION_ALIASES.get(location, location)
+    # 郡名は町村の前だけ外す(「蒲郡市」「郡山市」は市名の一部)
+    key = re.sub(r"^(北海道|東京都|京都府|大阪府|.{2,3}県)(\S+?郡)(?=\S+[町村]$)", r"\1", location)
+    if key in coords:
+        return tuple(coords[key])
+    # 政令指定都市の区が無ければ市の座標で代用する
+    m = re.match(r"^(.+?市)\S+区$", key)
+    if m and m.group(1) in coords:
+        return tuple(coords[m.group(1)])
+    return None

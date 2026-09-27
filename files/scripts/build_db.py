@@ -45,13 +45,19 @@ CREATE TABLE stations (
     language TEXT,
     target_area TEXT,
     note TEXT,
-    power_kw REAL
+    power_kw REAL,
+    lat REAL,
+    lon REAL
 );
 CREATE INDEX idx_freq ON stations(freq_khz);
 CREATE INDEX idx_band ON stations(band);
 """
 
 FREQ_RANGES_KHZ = {"AM": (520, 1720), "FM": (76000, 99000), "SW": (2300, 26100)}
+# 国内局(総務省の免許情報・AFN)の座標は日本の範囲に収まるはず
+JAPAN_BOUNDS = {"lat": (20.0, 46.0), "lon": (122.0, 154.0)}
+DOMESTIC_SOURCES = {"jp_am_fm_stations.json", "community_fm_stations.json", "jp_sw_stations.json",
+                    "afn_stations.json", "mic_stations.json"}
 
 
 def room_version():
@@ -59,6 +65,19 @@ def room_version():
     if not m:
         raise SystemExit(f"{APP_DATABASE_KT} から version を読み取れない")
     return int(m.group(1))
+
+
+def check_coordinates(s, domestic):
+    lat, lon = s["lat"], s["lon"]
+    if lat is None and lon is None:
+        return []
+    if not (isinstance(lat, float) and isinstance(lon, float)):
+        return [f"lat/lon は両方とも数値か両方とも null にする ({lat}, {lon})"]
+    low_lat, high_lat = JAPAN_BOUNDS["lat"] if domestic else (-90.0, 90.0)
+    low_lon, high_lon = JAPAN_BOUNDS["lon"] if domestic else (-180.0, 180.0)
+    if not (low_lat <= lat <= high_lat and low_lon <= lon <= high_lon):
+        return [f"座標 ({lat}, {lon}) が範囲外"]
+    return []
 
 
 def load_stations():
@@ -79,6 +98,7 @@ def load_stations():
                 errors.append(f"{where}: id または name が空")
             if s["power_kw"] is not None and not s["power_kw"] > 0:
                 errors.append(f"{where}: power_kw {s['power_kw']} が正の数でない")
+            errors.extend(f"{where}: {e}" for e in check_coordinates(s, filename in DOMESTIC_SOURCES))
             stations.append(s)
     for station_id, count in Counter(s["id"] for s in stations).items():
         if count > 1:
@@ -113,7 +133,9 @@ def main():
     shutil.copyfile(DB_PATH, ASSET_PATH)
 
     counts = Counter(s["band"] for s in stations)
-    print(f"{DB_PATH.name}: {len(stations)}件 {dict(sorted(counts.items()))} / user_version={version}", file=sys.stderr)
+    located = sum(1 for s in stations if s["lat"] is not None)
+    print(f"{DB_PATH.name}: {len(stations)}件 {dict(sorted(counts.items()))} / 座標あり {located}件 / user_version={version}",
+          file=sys.stderr)
     print(f"コピー先: {ASSET_PATH.relative_to(REPO_DIR)}", file=sys.stderr)
 
 

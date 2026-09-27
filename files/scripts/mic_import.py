@@ -4,7 +4,8 @@
 - 中波(AM)・超短波(FM。ワイドFMの 90〜99MHz を含む)・短波の「特定地上基幹放送局」の
   免許情報を取得し、キュレーション済みファイル(CURATED_FILES)に無い局
   (中継局・FM補完中継局・コミュニティFMの中継局など)を mic_stations.json に出力する。
-- キュレーション済みファイルの局は power_kw(空中線電力)だけを免許情報で更新する。
+- キュレーション済みファイルの局は power_kw(空中線電力)と lat/lon(送信所の所在地の座標)だけを免許情報で更新する。
+  座標は送信所の市区町村の代表点(municipality_coords.json、geo_import.py で生成)。
   周波数・コールサインの食い違いや、免許情報に見当たらない局は報告のみ行う(自動修正はしない)。
 
 使い方:
@@ -328,22 +329,75 @@ def parse_spec(spec, band):
     return [(f, p if p else record_max) for f, p in by_freq.items()]
 
 
-def parse_records(records):
+def equipment_locations(detail):
+    """「無線設備の設置場所」の市区町村(重複を除き、書かれている順)。"""
+    places = [p.strip() for p in re.split(r"\\n|\n", detail["radioEuipmentLocation"])]
+    return list(dict.fromkeys(p for p in places if p))
+
+
+# 演奏所を判別できない免許人のうち、先頭の設置場所が送信所ではないと確かめた局(コールサイン → 送信所の市区町村)
+TRANSMITTER_OVERRIDES = {
+    # Kiss FM KOBE: 本社(神戸市中央区)ではなく摩耶山送信所(灘区)(Wikipedia「兵庫エフエム放送」)
+    "JOIV-FM": "兵庫県神戸市灘区",
+    # e-radio: 空中線電力・実効輻射電力・方向別の指定が湖南市のNHK FM大津(JOQP-FM)と同一で、同じ送信所とみられる
+    "JOUV-FM": "滋賀県湖南市",
+}
+
+
+def transmitter_locations(records):
+    """免許ごとの送信所の所在地 {id(免許): 市区町村}。
+
+    「無線設備の設置場所」には送信所のほかに演奏所(本社)や予備送信所が並び、どれが先に書かれるかは
+    免許によって違う(例: MBSラジオ 1179kHz は 大阪市北区(本社・予備送信所)→高石市(送信所)→大阪市北区)。
+    同じ免許人の、設置場所が複数ある免許すべてに現れる場所が1つだけあれば、それを演奏所とみなし、
+    それ以外の最初の場所を送信所とする。演奏所を決められない免許人(NHKや、設置場所が複数ある免許が
+    1件だけの免許人)は最初の場所を送信所とし、違うと確かめた局は TRANSMITTER_OVERRIDES で直す。
+    """
+    by_licensee = defaultdict(list)
+    for recs in records.values():
+        for rec in recs:
+            by_licensee[norm(rec["detailInfo"]["name"])].append(rec)
+    result = {}
+    for recs in by_licensee.values():
+        multi = [equipment_locations(r["detailInfo"]) for r in recs]
+        multi = [places for places in multi if len(places) > 1]
+        shared = set.intersection(*(set(places) for places in multi)) if len(multi) > 1 else set()
+        studio = next(iter(shared)) if len(shared) == 1 else None
+        for rec in recs:
+            places = equipment_locations(rec["detailInfo"]) or [rec["listInfo"]["tdfkCd"]]
+            signals = re.sub(r"\\[nt]", " ", rec["detailInfo"]["identificationSignals"])
+            override = next((TRANSMITTER_OVERRIDES[c] for c in CALLSIGN_RE.findall(signals) if c in TRANSMITTER_OVERRIDES), None)
+            if override is not None:
+                if override not in places:
+                    raise SystemExit(f"TRANSMITTER_OVERRIDES の所在地 {override} が免許情報の設置場所 {places} に無い")
+                result[id(rec)] = override
+            else:
+                result[id(rec)] = next((p for p in places if p != studio), places[0])
+    return result
+
+
+def parse_records(records, coords):
     """免許情報を 1周波数=1件 の送信所リストにする。"""
     items = []
+    unresolved = set()
+    locations = transmitter_locations(records)
     for band, recs in records.items():
         for rec in recs:
-            detail, summary = rec["detailInfo"], rec["listInfo"]
+            detail = rec["detailInfo"]
             purpose = detail["radioStationPurpose"]
             if purpose not in PURPOSE_KINDS:
                 raise SystemExit(f"未知の無線局の目的: {purpose}(PURPOSE_KINDS に追加してください)")
             kind = PURPOSE_KINDS[purpose]
             if kind is None:
                 continue
-            location = summary["tdfkCd"]
+            location = locations[id(rec)]
             # 複数行の項目は改行が "\n" の2文字のまま入っているので、空白に置き換えてから探す
             signals = re.sub(r"\\[nt]", " ", detail["identificationSignals"])
             callsigns = CALLSIGN_RE.findall(signals)
+            point = stationdata.locate(location, coords)
+            if point is None:
+                unresolved.add(location)
+                continue
             for freq, power_w in parse_spec(detail["radioSpec1"], band):
                 items.append({
                     "band": band,
@@ -354,7 +408,14 @@ def parse_records(records):
                     "callsigns": callsigns,
                     "freq_khz": freq,
                     "power_kw": round(power_w / 1000, 4) if power_w else None,
+                    "lat": point[0],
+                    "lon": point[1],
                 })
+    if unresolved:
+        raise SystemExit(
+            f"座標が見つからない所在地: {sorted(unresolved)}"
+            "(geo_import.py を再実行するか、stationdata.LOCATION_ALIASES に表記ゆれを追加してください)"
+        )
     return items
 
 
@@ -552,6 +613,8 @@ def generate(items, curated, last_update):
             network=head["network"],
             note="。".join(notes) or None,
             power_kw=head["item"]["power_kw"],
+            lat=head["item"]["lat"],
+            lon=head["item"]["lon"],
         ))
     output.sort(key=lambda s: (s["band"], s["freq_khz"], s["area"], s["name"]))
     ids = [s["id"] for s in output]
@@ -566,27 +629,27 @@ def generate(items, curated, last_update):
             "このデータは総務省 電波利用ポータルのWeb-API機能を利用して取得した情報をもとに作成しているが、"
             "内容は総務省によって保証されたものではない。"
         ),
-        "_schema_version": 3,
+        "_schema_version": 4,
         "_source_updated": last_update,
         "stations": output,
     }
 
 
-def sync_curated_power(curated, matched):
-    """キュレーション済みファイルの power_kw を免許情報の空中線電力で更新する。"""
+def sync_curated(curated, matched):
+    """キュレーション済みファイルの power_kw・lat・lon を免許情報(空中線電力・送信所の所在地)で更新する。"""
     for filename, data in curated.items():
         changed = False
         new_stations = []
         for s in data["stations"]:
             item = matched.get(id(s))
-            power = item["power_kw"] if item else s.get("power_kw")
-            entry = stationdata.station(**{**s, "power_kw": power})
+            licensed = {k: item[k] for k in ("power_kw", "lat", "lon")} if item else {}
+            entry = stationdata.station(**{**s, **licensed})
             changed |= entry != s
             new_stations.append(entry)
         if changed:
             data["stations"] = new_stations
             stationdata.save(FILES_DIR / filename, data)
-            print(f"  {filename}: power_kw を更新", file=sys.stderr)
+            print(f"  {filename}: power_kw・lat・lon を更新", file=sys.stderr)
 
 
 def main():
@@ -603,13 +666,13 @@ def main():
         print("総務省 Web-API から取得中...", file=sys.stderr)
         records, last_update = fetch(args.raw_dir)
 
-    items = parse_records(records)
+    items = parse_records(records, stationdata.load_municipality_coords())
     curated = load_curated()
     entries, matched = match_curated(items, curated)
     problems = report_curated(entries, matched)
     data = generate(items, curated, last_update)
     stationdata.save(FILES_DIR / OUTPUT_FILE, data)
-    sync_curated_power(curated, matched)
+    sync_curated(curated, matched)
 
     counts = defaultdict(int)
     for s in data["stations"]:
