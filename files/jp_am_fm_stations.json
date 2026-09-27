@@ -1,6 +1,6 @@
 {
-  "_readme": "日本国内 AM/FM/コミュニティFM 局データセット。列構成は radio_stations.db のstations テーブルと同一(id, band, freq_khz, name, area, callsign, network, language, target_area, note)。freq_khz は AM/FM とも kHz 単位に統一(FMはMHz値×1000)。NHKは2026年3月30日の再編により「ラジオ第1」→「NHK AM」、「NHK-FM」→「NHK FM」、「ラジオ第2」は同年3月29日に廃止。全国のNHK・広域民放主要局を収録。コミュニティFM(300局超)は未収録。",
-  "_schema_version": 2,
+  "_readme": "日本国内のNHK・民放の主要局(親局)データセット。列構成は radio_stations.db の stations テーブルと同一(id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw)。freq_khz は AM/FM とも kHz 単位に統一(FMはMHz値×1000)。power_kw は空中線電力(kW)で、files/scripts/mic_import.py が総務省の免許情報から更新する。NHKは2026年3月30日の再編により「ラジオ第1」→「NHK AM」、「NHK-FM」→「NHK FM」、「ラジオ第2」は同年3月29日に廃止。中継局・FM補完中継局・ここに無い親局は mic_stations.json(自動生成)に収録。",
+  "_schema_version": 3,
   "stations": [
     {
       "id": "jp-kbskyoto-kyoto",
@@ -12,7 +12,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-nhkam-saga",
@@ -24,7 +25,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nbcsaga-saga",
@@ -36,7 +38,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "長崎放送(NBC)グループ局。本局・中継局とも2026年9月30日まで実証実験のため放送休止中(FM補完中継局93.5MHz等で聴取可能)。"
+      "note": "長崎放送(NBC)の佐賀県向け放送。本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(93.5MHz・92.1MHz)で聴取可能。",
+      "power_kw": 1.0
     },
     {
       "id": "jp-crk-hyogo",
@@ -48,7 +51,8 @@
       "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-nhkam-hokkaido",
@@ -60,7 +64,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 100.0
     },
     {
       "id": "jp-hbc-hokkaido",
@@ -72,7 +77,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-stv-hokkaido",
@@ -84,7 +90,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-wbs-wakayama",
@@ -96,7 +103,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "AMステレオ放送実施局。"
+      "note": "AMステレオ放送実施局。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-oita",
@@ -108,7 +116,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-obs-oita",
@@ -120,7 +129,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhk1-osaka",
@@ -132,7 +142,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 100.0
     },
     {
       "id": "jp-abc",
@@ -144,7 +155,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-mbs",
@@ -156,7 +168,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-obc",
@@ -165,10 +178,11 @@
       "name": "ラジオ大阪",
       "area": "大阪",
       "callsign": "JOUF",
-      "network": "independent",
+      "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-nhkam-miyagi",
@@ -180,7 +194,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 20.0
     },
     {
       "id": "jp-tbc-miyagi",
@@ -192,7 +207,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-nhkam-miyazaki",
@@ -204,7 +220,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-mrt-miyazaki",
@@ -216,7 +233,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-toyama",
@@ -228,7 +246,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-knb-toyama",
@@ -240,7 +259,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-yamaguchi",
@@ -252,7 +272,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "送信所は防府市。"
+      "note": "送信所は防府市。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-kry-yamaguchi",
@@ -264,7 +285,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "送信所は周南市(徳山)。山口・萩・下関・岩国等の中継局は2026年9月30日まで実証実験のため休止中だが、本局(周南765kHz)は放送中。"
+      "note": "送信所は周南市(徳山)。本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(92.3MHz・86.4MHz)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-yamagata",
@@ -276,7 +298,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-ybc-yamagata",
@@ -288,7 +311,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-ybs-yamanashi",
@@ -300,7 +324,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": "送信所は甲斐市。本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(90.9MHz)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-yamanashi",
@@ -312,7 +337,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-gbs-gifu",
@@ -324,7 +350,8 @@
       "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-okayama",
@@ -336,7 +363,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-rsk-okayama",
@@ -348,7 +376,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkam-iwate",
@@ -360,7 +389,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-ibc-iwate",
@@ -372,7 +402,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-shimane",
@@ -384,7 +415,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkam-hiroshima",
@@ -396,7 +428,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-rcc-hiroshima",
@@ -408,7 +441,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-nhkam-tokushima",
@@ -420,7 +454,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-jrt-tokushima",
@@ -432,7 +467,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "本局・中継局とも2026年9月30日まで実証実験のため放送休止中(FM補完中継局80.7MHz等で聴取可能)。"
+      "note": "本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(徳島93.0MHz・阿南93.9MHz)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-ehime",
@@ -444,7 +480,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-rnb-ehime",
@@ -456,7 +493,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "本局・全中継局とも2026年9月30日まで実証実験のため放送休止中(FM補完中継局91.7MHz等で聴取可能)。"
+      "note": "本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(91.7MHz・91.2MHz)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhk1-nagoya",
@@ -468,7 +506,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 50.0
     },
     {
       "id": "jp-cbc",
@@ -480,7 +519,8 @@
       "network": "JRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-tokairadio",
@@ -492,7 +532,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-nhkam-niigata",
@@ -504,7 +545,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-bsn-niigata",
@@ -516,7 +558,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhk1-tokyo",
@@ -528,7 +571,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 300.0
     },
     {
       "id": "jp-tbs",
@@ -537,10 +581,11 @@
       "name": "TBSラジオ",
       "area": "東京",
       "callsign": "JOKR",
-      "network": "JRN/NRN",
+      "network": "JRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 100.0
     },
     {
       "id": "jp-qr",
@@ -552,7 +597,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 100.0
     },
     {
       "id": "jp-lf",
@@ -564,7 +610,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 100.0
     },
     {
       "id": "jp-nhkam-okinawa",
@@ -576,7 +623,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-rbc-okinawa",
@@ -588,7 +636,8 @@
       "network": "JRN",
       "language": null,
       "target_area": null,
-      "note": "JRN系列単独局(NRNには非加盟)。"
+      "note": "JRN系列単独局(NRNには非加盟)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-rok-okinawa",
@@ -600,7 +649,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": "NRN系列単独局(JRNには非加盟)。"
+      "note": "NRN系列単独局(JRNには非加盟)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkam-kumamoto",
@@ -612,7 +662,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-rkk-kumamoto",
@@ -624,7 +675,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-mro-ishikawa",
@@ -636,7 +688,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-ishikawa",
@@ -648,7 +701,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-rf-kanagawa",
@@ -656,11 +710,12 @@
       "freq_khz": 1422.0,
       "name": "ラジオ日本",
       "area": "神奈川",
-      "callsign": "JOAG",
+      "callsign": "JORF",
       "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-fbc-fukui",
@@ -672,7 +727,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "要検証: 総務省実証実験により福井県内AM中継局を順次停波中(敦賀・小浜は2024年2月に停波済み、福井親局も2026年3月16日停波予定との情報あり)。本稿執筆時点でAM放送が現に継続しているかは未確認。FM補完(ワイドFM)は94.6MHzで別途運用。"
+      "note": "送信所は坂井市。本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(94.6MHz・93.6MHz)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-fukui",
@@ -684,7 +740,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-fukuoka",
@@ -696,7 +753,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 100.0
     },
     {
       "id": "jp-rkb-fukuoka",
@@ -708,7 +766,8 @@
       "network": "JRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-kbc-fukuoka",
@@ -720,7 +779,8 @@
       "network": "NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 50.0
     },
     {
       "id": "jp-nhkam-fukushima",
@@ -732,7 +792,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 1.0
     },
     {
       "id": "jp-rfc-fukushima",
@@ -744,7 +805,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-abs-akita",
@@ -756,7 +818,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-akita",
@@ -768,7 +831,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkam-nagasaki",
@@ -780,7 +844,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nbc-nagasaki",
@@ -792,7 +857,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-nagano",
@@ -804,7 +870,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-sbc-nagano",
@@ -816,7 +883,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "一部中継局(上田・佐久・軽井沢)が2025年12月〜2026年9月の予定で運用休止中。長野親局(本欄の周波数)は放送継続。"
+      "note": "一部中継局(上田・佐久・軽井沢)が2025年12月〜2026年9月の予定で運用休止中。長野親局(本欄の周波数)は放送継続。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-aomori",
@@ -828,7 +896,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-rab-aomori",
@@ -840,7 +909,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": "本局・全中継局とも、総務省の特例措置による実証実験のためAM放送を運用休止中(休止期間は2026年9月30日まで。延長の手続きが進んでいるため、以降は各局の発表を確認)。FM補完中継局(91.7MHz等)で聴取可能。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-shizuoka",
@@ -852,7 +922,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。"
+      "note": "旧称NHKラジオ第1。2026年3月30日にNHK AMへ改称(周波数・コールサインは継続)。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-sbs-shizuoka",
@@ -864,7 +935,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkam-kagawa",
@@ -876,7 +948,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-rnc-kagawa",
@@ -888,7 +961,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": "本局(高松)は放送中。丸亀・東かがわの中継局は2026年9月30日まで休止中。"
+      "note": "本局(高松)は放送中。丸亀・東かがわの中継局は2026年9月30日まで休止中。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-rkc-kochi",
@@ -900,7 +974,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-kochi",
@@ -912,7 +987,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-bss-tottori",
@@ -924,7 +1000,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": "鳥取県・島根県(山陰広域)",
-      "note": "本社・米子送信所。鳥取市には別途中継局(1431kHz)あり。島根県へも広域放送。"
+      "note": "本社・米子送信所。鳥取市には別途中継局(1431kHz)あり。島根県へも広域放送。",
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkam-tottori",
@@ -936,7 +1013,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkam-kagoshima",
@@ -948,7 +1026,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-mbc-kagoshima",
@@ -960,7 +1039,8 @@
       "network": "JRN/NRN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 20.0
     },
     {
       "id": "jp-fmmie-mie",
@@ -972,7 +1052,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-nhkfm-mie",
@@ -984,7 +1065,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "三重県内にNHK AM(旧ラジオ第1)の独立した親局はなく、NHK名古屋放送局(JOCK 729kHz)の中継局(尾鷲1161kHz・熊野1368kHz・上野1161kHz等)でカバーされているため、県代表の単一AM周波数として収録していない。また三重県には民放AM局が存在しない。"
+      "note": "三重県内にNHK AM(旧ラジオ第1)の独立した親局はなく、NHK名古屋放送局(JOCK 729kHz)の中継局(尾鷲1161kHz・熊野1368kHz・上野1161kHz等)でカバーされているため、県代表の単一AM周波数として収録していない。また三重県には民放AM局が存在しない。",
+      "power_kw": 3.0
     },
     {
       "id": "jp-nhkfm-kyoto",
@@ -996,7 +1078,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-alphastation-kyoto",
@@ -1008,7 +1091,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-fmsaga-saga",
@@ -1020,7 +1104,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-nhkfm-saga",
@@ -1032,7 +1117,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-nhkfm-kobe",
@@ -1044,7 +1130,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-kissfmkobe",
@@ -1056,7 +1143,8 @@
       "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-airg-hokkaido",
@@ -1068,7 +1156,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-northwave-hokkaido",
@@ -1077,10 +1166,11 @@
       "name": "FM NORTH WAVE",
       "area": "北海道",
       "callsign": "JOPV-FM",
-      "network": "independent",
+      "network": "JFL",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkfm-hokkaido",
@@ -1092,7 +1182,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-bayfm",
@@ -1100,11 +1191,12 @@
       "freq_khz": 78000.0,
       "name": "bayfm78",
       "area": "千葉",
-      "callsign": "JODW-FM",
-      "network": "MegaNet",
+      "callsign": "JOGV-FM",
+      "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkfm-wakayama",
@@ -1116,7 +1208,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-nack5",
@@ -1124,23 +1217,25 @@
       "freq_khz": 79500.0,
       "name": "NACK5",
       "area": "埼玉",
-      "callsign": "JODK-FM",
-      "network": "MegaNet",
+      "callsign": "JODV-FM",
+      "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-airradio-oita",
       "band": "FM",
       "freq_khz": 88000.0,
-      "name": "Air-Radio(大分エフエム放送)",
+      "name": "Air-Radio(エフエム大分)",
       "area": "大分",
       "callsign": "JOJV-FM",
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-oita",
@@ -1152,7 +1247,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmcocolo",
@@ -1164,7 +1260,8 @@
       "network": "independent",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": "外国語放送局。FM802が運営する。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-fm802",
@@ -1173,10 +1270,11 @@
       "name": "FM802",
       "area": "大阪",
       "callsign": "JOFV-FM",
-      "network": "independent",
+      "network": "JFL",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-fmosaka-osaka",
@@ -1188,7 +1286,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkfm-osaka",
@@ -1200,7 +1299,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkfm-nara",
@@ -1212,7 +1312,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "奈良県には独立局のAM/FM民放局はなく(2026年時点で県域FM未開局)、大阪・京都等の広域局を受信する形になっている。"
+      "note": "奈良県には独立局のAM/FM民放局はなく(2026年時点で県域FM未開局)、大阪・京都等の広域局を受信する形になっている。",
+      "power_kw": 0.5
     },
     {
       "id": "jp-datefm-miyagi",
@@ -1224,7 +1325,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-nhkfm-miyagi",
@@ -1236,7 +1338,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-joyfm-miyazaki",
@@ -1248,7 +1351,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-miyazaki",
@@ -1260,7 +1364,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-nhkfm-toyama",
@@ -1272,7 +1377,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmtoyama-toyama",
@@ -1284,7 +1390,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmy-yamaguchi",
@@ -1296,7 +1403,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-yamaguchi",
@@ -1308,7 +1416,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-fmyamagata-yamagata",
@@ -1320,7 +1429,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-yamagata",
@@ -1332,7 +1442,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmfuji-yamanashi",
@@ -1344,7 +1455,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-yamanashi",
@@ -1356,7 +1468,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmgifu-gifu",
@@ -1368,7 +1481,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-gifu",
@@ -1380,7 +1494,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": "岐阜県内にNHK AM(旧ラジオ第1)の独立した親局はなく、NHK名古屋放送局(JOCK 729kHz)の中継局(中津川1161kHz・郡上八幡846kHz・高山792kHz・神岡1341kHz等)でカバーされているため、県代表の単一AM周波数として収録していない。"
+      "note": "岐阜県内にNHK AM(旧ラジオ第1)の独立した親局はなく、NHK名古屋放送局(JOCK 729kHz)の中継局(中津川1161kHz・郡上八幡846kHz・高山792kHz・神岡1341kHz等)でカバーされているため、県代表の単一AM周波数として収録していない。",
+      "power_kw": 1.0
     },
     {
       "id": "jp-rskfm-okayama",
@@ -1392,7 +1507,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-okayama",
@@ -1404,7 +1520,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmiwate-iwate",
@@ -1416,7 +1533,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-iwate",
@@ -1428,19 +1546,21 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-vair-shimane",
       "band": "FM",
       "freq_khz": 77400.0,
-      "name": "V-air(山陰放送)",
+      "name": "V-air(エフエム山陰)",
       "area": "島根",
       "callsign": "JOVU-FM",
-      "network": "JRN/NRN",
+      "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": "松江送信所。島根県には独立の民放AM局はなく、鳥取県のBSS(900kHz等)を受信する形。"
+      "note": "鳥取県・島根県を放送対象地域とするFM局。親局は松江送信所。",
+      "power_kw": 0.5
     },
     {
       "id": "jp-nhkfm-shimane",
@@ -1452,7 +1572,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-hfm-hiroshima",
@@ -1464,7 +1585,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-hiroshima",
@@ -1476,7 +1598,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-mv-tokushima",
@@ -1488,7 +1611,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-tokushima",
@@ -1500,7 +1624,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-eu-ehime",
@@ -1512,7 +1637,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-ehime",
@@ -1524,7 +1650,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-zipfm",
@@ -1533,10 +1660,11 @@
       "name": "ZIP-FM",
       "area": "愛知",
       "callsign": "JOQV-FM",
-      "network": "independent",
+      "network": "JFL",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-fmaichi",
@@ -1548,7 +1676,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-nhkfm-aichi",
@@ -1560,7 +1689,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-fmniigata-niigata",
@@ -1572,7 +1702,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-niigata",
@@ -1584,7 +1715,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-tokyofm",
@@ -1596,7 +1728,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 10.0
     },
     {
       "id": "jp-jwave",
@@ -1605,10 +1738,11 @@
       "name": "J-WAVE",
       "area": "東京",
       "callsign": "JOAV-FM",
-      "network": "independent",
+      "network": "JFL",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 7.0
     },
     {
       "id": "jp-nhkfm-tokyo",
@@ -1620,7 +1754,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 7.0
     },
     {
       "id": "jp-interfm",
@@ -1628,11 +1763,12 @@
       "freq_khz": 89700.0,
       "name": "InterFM897",
       "area": "東京",
-      "callsign": "JOIF-FM",
-      "network": "independent",
+      "callsign": "JODW-FM",
+      "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": "外国語放送局。2020年9月からJFNの特別加盟局。",
+      "power_kw": 10.0
     },
     {
       "id": "jp-fmokinawa-okinawa",
@@ -1644,7 +1780,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-okinawa",
@@ -1656,7 +1793,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-eradio-shiga",
@@ -1668,7 +1806,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": "滋賀県の民放AM局(KBS滋賀=KBS京都彦根中継局)は2026年3月30日より実証実験のため長期休止中のため未収録。"
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-otsu",
@@ -1680,7 +1819,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmkumamoto-kumamoto",
@@ -1692,7 +1832,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-kumamoto",
@@ -1704,7 +1845,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-hellofive-ishikawa",
@@ -1716,7 +1858,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-ishikawa",
@@ -1728,7 +1871,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmyokohama",
@@ -1736,11 +1880,12 @@
       "freq_khz": 84700.0,
       "name": "FMヨコハマ",
       "area": "神奈川",
-      "callsign": "JOKZ-FM",
+      "callsign": "JOTU-FM",
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 5.0
     },
     {
       "id": "jp-fmfukui-fukui",
@@ -1752,7 +1897,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-fukui",
@@ -1764,7 +1910,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-crossfm-fukuoka",
@@ -1773,10 +1920,11 @@
       "name": "CROSS FM",
       "area": "福岡",
       "callsign": "JORV-FM",
-      "network": "independent",
+      "network": "JFL",
       "language": null,
       "target_area": null,
-      "note": "JFL(JAPAN FM LEAGUE)加盟局。"
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-fmfukuoka-fukuoka",
@@ -1788,19 +1936,21 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-lovefm-fukuoka",
       "band": "FM",
-      "freq_khz": 82500.0,
+      "freq_khz": 76100.0,
       "name": "ラブエフエム国際放送(LOVE FM)",
       "area": "福岡",
-      "callsign": null,
-      "network": null,
+      "callsign": "JOFW-FM",
+      "network": "independent",
       "language": "多言語(日本語・英語・中国語・韓国語 等)",
       "target_area": "福岡市・北九州市・久留米市・大牟田市",
-      "note": "多言語コミュニティ色の強い放送局。コールサインは要検証のため未記載。"
+      "note": "多言語で放送する外国語放送局。親局は那珂川市の76.1MHzで、福岡市早良区(82.5MHz)・北九州市(82.7MHz)に中継局がある。",
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-fukuoka",
@@ -1812,7 +1962,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-fukushimafm-fukushima",
@@ -1824,7 +1975,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-fukushima",
@@ -1836,7 +1988,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-fmakita-akita",
@@ -1848,7 +2001,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-nhkfm-akita",
@@ -1860,7 +2014,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-fmnagasaki-nagasaki",
@@ -1872,7 +2027,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-nagasaki",
@@ -1884,7 +2040,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-fmnagano-nagano",
@@ -1896,7 +2053,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-nagano",
@@ -1908,7 +2066,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-afb-aomori",
@@ -1920,7 +2079,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-aomori",
@@ -1932,7 +2092,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 3.0
     },
     {
       "id": "jp-kmix-shizuoka",
@@ -1944,7 +2105,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-shizuoka",
@@ -1956,7 +2118,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-yu-kagawa",
@@ -1968,7 +2131,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-kagawa",
@@ -1980,7 +2144,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-hisix-kochi",
@@ -1992,7 +2157,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-nhkfm-kochi",
@@ -2004,19 +2170,21 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-vair-tottori",
       "band": "FM",
       "freq_khz": 78800.0,
-      "name": "V-air(山陰放送)",
+      "name": "V-air(エフエム山陰)",
       "area": "鳥取",
       "callsign": null,
-      "network": "JRN/NRN",
+      "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": "コールサインは島根(松江)送信所側でJOVU-FMを確認、鳥取側の個別コールサインは要検証。"
+      "note": "鳥取県内の中継局(湯梨浜町)。親局は松江の77.4MHz(JOVU-FM)。",
+      "power_kw": 0.7
     },
     {
       "id": "jp-nhkfm-tottori",
@@ -2028,7 +2196,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.5
     },
     {
       "id": "jp-mufm-kagoshima",
@@ -2040,7 +2209,8 @@
       "network": "JFN",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     },
     {
       "id": "jp-nhkfm-kagoshima",
@@ -2052,7 +2222,8 @@
       "network": "NHK",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 1.0
     }
   ]
 }

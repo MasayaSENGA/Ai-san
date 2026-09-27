@@ -39,6 +39,8 @@ import androidx.compose.ui.unit.dp
 import com.aisan.radio.data.Station
 import com.aisan.radio.ui.Band
 import com.aisan.radio.ui.StationViewModel
+import java.math.BigDecimal
+import java.math.MathContext
 
 class MainActivity : ComponentActivity() {
     private val viewModel: StationViewModel by viewModels()
@@ -127,6 +129,9 @@ fun StationScreen(viewModel: StationViewModel) {
                 items(uiState.results) { station ->
                     StationCard(station, uiState.band)
                 }
+                item {
+                    DataSourceNotice()
+                }
             }
         }
     }
@@ -145,7 +150,8 @@ fun StationCard(station: Station, band: Band) {
             val subInfo = listOfNotNull(
                 station.area,
                 station.callsign,
-                station.network
+                station.network,
+                station.power_kw?.let(::formatPower)
             ).joinToString(" ・ ")
             if (subInfo.isNotEmpty()) {
                 Text(subInfo, style = MaterialTheme.typography.bodySmall)
@@ -156,6 +162,26 @@ fun StationCard(station: Station, band: Band) {
             }
         }
     }
+}
+
+// 総務省 Web-API の利用規約(第3条)で表示が求められている文言を含む
+@Composable
+fun DataSourceNotice() {
+    Text(
+        "出典: 総務省 電波利用ポータル、EiBi Shortwave Schedules、Wikipedia。" +
+            "このサービスは、総務省 電波利用ポータルのWeb-API 機能を利用して取得した情報をもとに作成しているが、" +
+            "サービスの内容は総務省によって保証されたものではない。",
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.padding(top = 8.dp)
+    )
+}
+
+// 空中線電力を "出力 10kW" / "出力 300W" のように表示する
+private fun formatPower(powerKw: Double): String {
+    val (value, unit) = if (powerKw >= 1.0) powerKw to "kW" else powerKw * 1000.0 to "W"
+    val digits = BigDecimal.valueOf(value).round(MathContext(3)).stripTrailingZeros().toPlainString()
+    return "出力 $digits$unit"
 }
 
 private fun formatFrequency(freqKhz: Double?, band: Band): String {

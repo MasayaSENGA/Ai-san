@@ -29,6 +29,9 @@ captures/
 *.ap_
 *.dex
 
+# Python (files/scripts)
+__pycache__/
+
 # Log/OS files
 *.log
 .DS_Store

@@ -1,6 +1,6 @@
 {
-  "_readme": "日本国内のコミュニティFM局(1992年制度化、76.0〜90.0MHz帯、市区町村単位の小規模FM局)データセット。Wikipedia「コミュニティ放送局一覧」の生wikitext/HTMLを直接パースし、一部は総務省(各総合通信局)の無線局情報でも裏取りして作成。廃局(放送終了)は除外済み。列構成はradio_stations.dbのstationsテーブルと同一。",
-  "_schema_version": 1,
+  "_readme": "日本国内のコミュニティFM局(1992年制度化、76.0〜90.0MHz帯、市区町村単位の小規模FM局)データセット。Wikipedia「コミュニティ放送局一覧」の生wikitext/HTMLを直接パースし、一部は総務省(各総合通信局)の無線局情報でも裏取りして作成。廃局(放送終了)は除外済み。列構成はradio_stations.dbのstationsテーブルと同一。中継局は mic_stations.json(総務省の免許情報から自動生成)に収録。",
+  "_schema_version": 2,
   "stations": [
     {
       "id": "jp-cfm-hakodate-fm-iruka",
@@ -12,7 +12,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 函館山ロープウェイ株式会社"
+      "note": "免許人: 函館山ロープウェイ株式会社",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-asahikawa-fm-riberu",
@@ -24,7 +25,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 株式会社旭川シティネットワーク"
+      "note": "免許人: 株式会社旭川シティネットワーク",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kushiro-fm-kushiro",
@@ -36,7 +38,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムくしろ"
+      "note": "免許人: エフエムくしろ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-obihiro-fm-wing",
@@ -48,7 +51,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: おびひろ市民ラジオ"
+      "note": "免許人: おびひろ市民ラジオ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-obihiro-fm-jaga",
@@ -60,7 +64,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムおびひろ"
+      "note": "免許人: エフエムおびひろ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-iwamizawa-fm-hamanasu",
@@ -72,7 +77,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: コミュニティエフエムはまなす"
+      "note": "免許人: コミュニティエフエムはまなす",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-otaru-fm-otaru",
@@ -84,7 +90,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエム小樽放送局"
+      "note": "免許人: エフエム小樽放送局",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-wakkanai-fm-wappi",
@@ -96,7 +103,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 株式会社エフエムわっかない"
+      "note": "免許人: 株式会社エフエムわっかない",
+      "power_kw": 0.05
     },
     {
       "id": "jp-cfm-sapporo-chuo-radio-kalos",
@@ -108,7 +116,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 札幌コミュニティ放送局"
+      "note": "免許人: 札幌コミュニティ放送局",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-toyohira-fm-apple",
@@ -120,7 +129,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムとよひら"
+      "note": "免許人: エフエムとよひら",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-nishi-sankakuyama",
@@ -132,7 +142,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: らむれす"
+      "note": "免許人: らむれす",
+      "power_kw": 0.015
     },
     {
       "id": "jp-cfm-nemuro-fm-nemuro",
@@ -144,7 +155,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: ねむろ市民ラジオ"
+      "note": "免許人: ねむろ市民ラジオ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-chuo-radio-nostalgia",
@@ -156,7 +168,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 札幌ラヂオ放送"
+      "note": "免許人: 札幌ラヂオ放送",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-kitahiroshima-fm-maple",
@@ -168,7 +181,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 北広島エフエム放送"
+      "note": "免許人: 北広島エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takikawa-fm-gsky",
@@ -180,7 +194,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムなかそらち"
+      "note": "免許人: エフエムなかそらち",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-higashi-sapporomura-radio",
@@ -192,7 +207,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-atsubetsu-radio-yamasho",
@@ -204,7 +220,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: BIPSC"
+      "note": "免許人: BIPSC",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-rumoi-fm-moeru",
@@ -216,7 +233,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-furano-radio-furano",
@@ -228,7 +246,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-eniwa-e-niwa",
@@ -240,7 +259,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: あいコミ"
+      "note": "免許人: あいコミ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nayoro-air-tesshi",
@@ -252,7 +272,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムなよろ"
+      "note": "免許人: エフエムなよろ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sapporo-shiroishi-with-s",
@@ -264,7 +285,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムしろいし"
+      "note": "免許人: エフエムしろいし",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nakashibetsu-fm-hana",
@@ -276,7 +298,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: FMなかしべつ放送"
+      "note": "免許人: FMなかしべつ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-muroran-fm-vu",
@@ -288,7 +311,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 室蘭まちづくり放送"
+      "note": "免許人: 室蘭まちづくり放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-niseko-radio-niseko",
@@ -300,7 +324,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: ニセコリゾート観光協会"
+      "note": "免許人: ニセコリゾート観光協会",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-date-wi-radio",
@@ -312,7 +337,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: だて観光協会"
+      "note": "免許人: だて観光協会",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-abashiri-fm-abashiri",
@@ -324,7 +350,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: LIA"
+      "note": "免許人: LIA",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tomakomai-fm-tomakomai",
@@ -336,7 +363,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: とまこまいコミュニティ放送"
+      "note": "免許人: とまこまいコミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kuriyama-fm-kuriyama",
@@ -348,7 +376,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yamagata-radio-monster",
@@ -360,7 +389,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 山形コミュニティ放送"
+      "note": "免許人: 山形コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sendai-aoba-radio3",
@@ -372,7 +402,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 仙台シティエフエム"
+      "note": "免許人: 仙台シティエフエム",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fukushima-fm-poco",
@@ -384,7 +415,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 福島コミュニティ放送"
+      "note": "免許人: 福島コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-aizuwakamatsu-fm-ais",
@@ -396,7 +428,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエム会津"
+      "note": "免許人: エフエム会津",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-iwaki-sea-wave",
@@ -408,7 +441,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: いわき市民コミュニティ放送"
+      "note": "免許人: いわき市民コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shiogama-bay-wave",
@@ -420,7 +454,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムベイエリア"
+      "note": "免許人: エフエムベイエリア",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ishinomaki-radio-ishinomaki",
@@ -432,7 +467,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 石巻コミュニティ放送"
+      "note": "免許人: 石巻コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-mutsu-fm-azur",
@@ -444,7 +480,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムむつ"
+      "note": "免許人: エフエムむつ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-morioka-radio-morioka",
@@ -456,7 +493,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-iwanuma-fm-iwanuma",
@@ -468,7 +506,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sakata-harbor-radio",
@@ -480,7 +519,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 酒田エフエム放送"
+      "note": "免許人: 酒田エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hachinohe-be-fm",
@@ -492,7 +532,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: ビーエフエム"
+      "note": "免許人: ビーエフエム",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-akita-akita-community",
@@ -504,7 +545,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yuzawa-fm-utopia",
@@ -516,7 +558,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムゆーとぴあ"
+      "note": "免許人: エフエムゆーとぴあ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sendai-izumi-fm-izumi",
@@ -528,7 +571,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: せんだい泉エフエム放送"
+      "note": "免許人: せんだい泉エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hirosaki-fm-apple-wave",
@@ -540,7 +584,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: アップルウェーブ"
+      "note": "免許人: アップルウェーブ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-akita-fm-tsubakidai",
@@ -552,7 +597,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 秋田椿台エフエム放送"
+      "note": "免許人: 秋田椿台エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kitakata-kitakata-city-fm",
@@ -564,7 +610,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ninohe-cassiopeia-fm",
@@ -576,7 +623,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: カシオペア市民情報ネットワーク"
+      "note": "免許人: カシオペア市民情報ネットワーク",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-motomiya-fm-motcom",
@@ -588,7 +636,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: Mot.Comもとみや"
+      "note": "免許人: Mot.Comもとみや",
+      "power_kw": 0.018
     },
     {
       "id": "jp-cfm-oshu-oshu-fm",
@@ -600,7 +649,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 奥州エフエム放送"
+      "note": "免許人: 奥州エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sendai-taihaku-fm-taihaku",
@@ -612,7 +662,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tome-h-fm",
@@ -624,7 +675,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 登米コミュニティエフエム"
+      "note": "免許人: 登米コミュニティエフエム",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hanamaki-fm-one",
@@ -636,7 +688,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: えふえむ花巻"
+      "note": "免許人: えふえむ花巻",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-koriyama-koco-radi",
@@ -648,7 +701,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 郡山コミュニティ放送"
+      "note": "免許人: 郡山コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokote-kamakura-fm",
@@ -660,7 +714,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 横手コミュニティFM放送"
+      "note": "免許人: 横手コミュニティFM放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ichinoseki-fm-asumo",
@@ -672,7 +727,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 一関コミュニティFM"
+      "note": "免許人: 一関コミュニティFM",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yonezawa-fm-ncv-okitama",
@@ -684,7 +740,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: ニューメディア"
+      "note": "免許人: ニューメディア",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-osaki-ocr-fm835",
@@ -696,7 +753,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: おおさきエフエム放送"
+      "note": "免許人: おおさきエフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kazuno-kiritanpo-fm",
@@ -708,7 +766,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 鹿角コミュニティFM"
+      "note": "免許人: 鹿角コミュニティFM",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-miyako-miyako-harbor-radio",
@@ -720,7 +779,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 宮古エフエム放送"
+      "note": "免許人: 宮古エフエム放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-goshogawara-g-radio",
@@ -732,7 +792,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 五所川原エフエム"
+      "note": "免許人: 五所川原エフエム",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagai-orandaradio",
@@ -744,7 +805,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 日本・アルカディア・ネットワーク"
+      "note": "免許人: 日本・アルカディア・ネットワーク",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-natori-natoraji801",
@@ -756,7 +818,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: エフエムなとり"
+      "note": "免許人: エフエムなとり",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-daisen-fm-hanabi",
@@ -768,7 +831,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: TMO大曲"
+      "note": "免許人: TMO大曲",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sendai-miyagino-rakuten-fm-tohoku",
@@ -780,7 +844,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 楽天野球団"
+      "note": "免許人: 楽天野球団",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kesennuma-gyotto-fm",
@@ -792,7 +857,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: ラヂオ気仙沼"
+      "note": "免許人: ラヂオ気仙沼",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kitakami-e-and-be-fm",
@@ -804,7 +870,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 北上ケーブルテレビ"
+      "note": "免許人: 北上ケーブルテレビ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sukagawa-ultra-fm",
@@ -816,7 +883,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: こぷろ須賀川"
+      "note": "免許人: こぷろ須賀川",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shinjo-asuraji",
@@ -828,7 +896,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "免許人: 新庄コミュニティ放送"
+      "note": "免許人: 新庄コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-zushi-shonan-beach-fm",
@@ -840,7 +909,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hiratsuka-fm-shonan-napasa",
@@ -852,7 +922,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokosuka-fm-blue-shonan",
@@ -864,7 +935,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kamakura-fm",
@@ -876,7 +948,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-musashino-fm",
@@ -888,7 +961,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kisarazu-kazusa-fm",
@@ -900,7 +974,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fujisawa-radio-shonan",
@@ -912,7 +987,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kawasaki-nakahara-fm",
@@ -924,7 +1000,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.007
     },
     {
       "id": "jp-cfm-sagamihara-fm-hot839",
@@ -936,7 +1013,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-iruma-fm-chappy",
@@ -948,7 +1026,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-mito-fm-parurun",
@@ -960,7 +1039,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-katsushika-fm",
@@ -972,7 +1052,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takasaki-radio",
@@ -984,7 +1065,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yamato-fm",
@@ -996,7 +1078,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-edogawa-fm",
@@ -1008,7 +1091,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-numata-fm-oze",
@@ -1020,7 +1104,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nishitokyo-fm",
@@ -1032,7 +1117,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-konosu-flower-radio",
@@ -1044,7 +1130,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-chofu-fm",
@@ -1056,7 +1143,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-chuo-fm-radio-city",
@@ -1068,7 +1156,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-ichikawa-urara-fm",
@@ -1080,7 +1169,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-setagaya-fm",
@@ -1092,7 +1182,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ota-fm-taro",
@@ -1104,7 +1195,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kashima-fm",
@@ -1116,7 +1208,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokohama-aoba-fm-salus",
@@ -1128,7 +1221,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-koto-rainbow-town-fm",
@@ -1140,7 +1234,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-higashimurayama-tama-lakeside-fm",
@@ -1152,7 +1247,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-tamamura-radio-nanami",
@@ -1164,7 +1260,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-saitama-urawa-reds-wave",
@@ -1176,7 +1273,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-asaka-nanako-lively-fm",
@@ -1188,7 +1286,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-tachikawa-fm",
@@ -1200,7 +1299,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-odawara-fm",
@@ -1212,7 +1312,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kiryu-fm",
@@ -1224,7 +1325,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tsukuba-radio",
@@ -1236,7 +1338,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-isesaki-fm",
@@ -1248,7 +1351,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokohama-totsuka-fm",
@@ -1260,7 +1364,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-ichihara-fm",
@@ -1272,7 +1377,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kiyokawa-miyagase-lakeside-fm",
@@ -1284,7 +1390,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.002
     },
     {
       "id": "jp-cfm-hitachi-fm",
@@ -1296,7 +1403,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-maebashi-radio",
@@ -1308,7 +1416,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-ebina-fm-kaon",
@@ -1320,7 +1429,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.015
     },
     {
       "id": "jp-cfm-daigo-fm",
@@ -1332,7 +1442,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-narita-radio",
@@ -1344,7 +1455,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tochigi-fm-kurara857",
@@ -1356,7 +1468,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ushiku-fm-ureshiku",
@@ -1368,7 +1481,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kawaguchi-fm",
@@ -1380,7 +1494,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-koshigaya-fm",
@@ -1392,7 +1507,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shibuya-no-radio",
@@ -1404,7 +1520,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yachiyo-fm-fukurou",
@@ -1416,7 +1533,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-oiso-shonan-magic-wave",
@@ -1428,7 +1546,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-miyoshi-hassuru-fm",
@@ -1440,7 +1559,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-utsunomiya-miyaradi",
@@ -1452,7 +1572,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hachioji-tokyo-star-radio",
@@ -1464,7 +1585,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-oyama-oradi",
@@ -1476,7 +1598,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-higashikurume-tokyo854",
@@ -1488,7 +1611,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-yokohama-naka-marine-fm",
@@ -1500,7 +1624,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fuchu-tama-river-radio",
@@ -1512,7 +1637,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.007
     },
     {
       "id": "jp-cfm-kumagaya-fm",
@@ -1524,7 +1650,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shinagawa-fm",
@@ -1536,7 +1663,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-komae-komaradi",
@@ -1548,7 +1676,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.004
     },
     {
       "id": "jp-cfm-chichibu-fm",
@@ -1560,7 +1689,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shimotsuke-fm-yugao",
@@ -1572,7 +1702,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-moka-fm",
@@ -1584,7 +1715,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-chiba-chuo-skywave-fm",
@@ -1596,7 +1728,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kawagoe-radio",
@@ -1608,7 +1741,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-fukaya-fm-fukkachan",
@@ -1620,7 +1754,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokohama-kanazawa-seaside-fm",
@@ -1632,7 +1767,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-kazo-fm-watarase",
@@ -1644,7 +1780,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-chigasaki-fm-eboshi",
@@ -1656,7 +1793,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ashikaga-fm-damono",
@@ -1668,7 +1806,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kawasaki-fm-daishi",
@@ -1680,7 +1819,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ageo-airaji",
@@ -1692,7 +1832,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fussa-hello-fm",
@@ -1704,7 +1845,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.003
     },
     {
       "id": "jp-cfm-niigata-radiochat",
@@ -1716,7 +1858,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kashiwazaki-pikkara",
@@ -1728,7 +1871,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-niigata-kento",
@@ -1740,7 +1884,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shibata-shibaraji",
@@ -1752,7 +1897,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-minamiuonuma-yukiguni",
@@ -1764,7 +1910,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagaoka-fm",
@@ -1776,7 +1923,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tsubamesanjo-radiohaato",
@@ -1788,7 +1936,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-joetsu-fmj",
@@ -1800,7 +1949,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-niigata-pokapokaradio",
@@ -1812,7 +1962,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tokamachi-fm",
@@ -1824,7 +1975,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-myoko-fm",
@@ -1836,7 +1988,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-uonuma-fm",
@@ -1848,7 +2001,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagano-zenkoji",
@@ -1860,7 +2014,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-saku-sakudaira",
@@ -1872,7 +2027,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-karuizawa-fm",
@@ -1884,7 +2040,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-iida-istation",
@@ -1896,7 +2053,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-suwa-lcvfm769",
@@ -1908,7 +2066,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tomi-hareradi",
@@ -1920,7 +2079,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-azumino-fm",
@@ -1932,7 +2092,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-matsumoto-fm",
@@ -1944,7 +2105,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shiojiri-takabocchi",
@@ -1956,7 +2118,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ina-inadanifm",
@@ -1968,7 +2131,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takaoka-radio",
@@ -1980,7 +2144,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-toyama-cityfm",
@@ -1992,7 +2157,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kurobe-radiomu",
@@ -2004,7 +2170,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tonami-fm",
@@ -2016,7 +2183,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-imizu-fm",
@@ -2028,7 +2196,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nonoichi-fmn1",
@@ -2040,7 +2209,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kanazawa-radio",
@@ -2052,7 +2222,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-komatsu-radio",
@@ -2064,7 +2235,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nanao-radio",
@@ -2076,7 +2248,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kahoku-fm",
@@ -2088,7 +2261,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fukui-machikado",
@@ -2100,7 +2274,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tannan-yumeradio",
@@ -2112,7 +2287,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tsuruga-harborstation",
@@ -2124,7 +2300,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kofu-fm",
@@ -2136,7 +2313,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hokuto-yatsugatake",
@@ -2148,7 +2326,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fujikawaguchiko-fujiyama",
@@ -2160,7 +2339,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fujiyoshida-fujigoko",
@@ -2172,7 +2352,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takayama-hitsfm",
@@ -2184,7 +2365,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tajimi-fmpipi",
@@ -2196,7 +2378,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-gifu-fmwacchi",
@@ -2208,7 +2391,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kani-fmrara",
@@ -2220,7 +2404,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hamamatsu-fmharo",
@@ -2232,7 +2417,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shizuoka-swave",
@@ -2244,7 +2430,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-mishima-voicecue",
@@ -2256,7 +2443,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ito-nagisastation",
@@ -2268,7 +2456,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-numazu-coastfm",
@@ -2280,7 +2469,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-atami-ciao",
@@ -2292,7 +2482,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fuji-radiof",
@@ -2304,7 +2495,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shimada-gsky",
@@ -2316,7 +2508,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-izunokuni-fm",
@@ -2328,7 +2521,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-izu-fmis",
@@ -2340,7 +2534,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-gotemba-gogofm",
@@ -2352,7 +2547,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yaizu-radiolush",
@@ -2364,7 +2560,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-toyohashi-fm",
@@ -2376,7 +2573,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-okazaki-egao",
@@ -2388,7 +2586,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-toyota-loveat",
@@ -2400,7 +2599,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kariya-pitchfm",
@@ -2412,7 +2612,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-seto-radiosanq",
@@ -2424,7 +2625,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-inuyama-unitednorth",
@@ -2436,7 +2638,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tokai-mediasfm",
@@ -2448,7 +2651,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagoya-midfm761",
@@ -2460,7 +2664,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ichinomiya-iwave",
@@ -2472,7 +2677,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kanie-nanami",
@@ -2484,7 +2690,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagoya-heartfm",
@@ -2496,7 +2703,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yokkaichi-ctyfm",
@@ -2508,7 +2716,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nabari-adsfm",
@@ -2520,7 +2729,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-suzuka-voicefm",
@@ -2532,7 +2742,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-inabe-fm",
@@ -2544,7 +2755,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kyoto-fm845",
@@ -2556,7 +2768,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 京都リビングエフエム"
+      "note": "運営: 京都リビングエフエム",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-minoh-tackey816",
@@ -2568,7 +2781,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 箕面FMまちそだて"
+      "note": "運営: 箕面FMまちそだて",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-uji-fmuji",
@@ -2580,7 +2794,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム宇治放送"
+      "note": "運営: エフエム宇治放送",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-osaka-yesfm",
@@ -2592,7 +2807,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムちゅうおう"
+      "note": "運営: エフエムちゅうおう",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-miki-fmmikkii",
@@ -2604,7 +2820,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム三木"
+      "note": "運営: エフエム三木",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-amagasaki-fmbloom",
@@ -2616,7 +2833,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: みんなのあま咲き放送局(エフエムあまがさき)"
+      "note": "運営: みんなのあま咲き放送局(エフエムあまがさき)",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-itami-happyfm",
@@ -2628,7 +2846,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 伊丹まち未来"
+      "note": "運営: 伊丹まち未来",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-osaka-umedafm",
@@ -2640,7 +2859,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムキタ"
+      "note": "運営: エフエムキタ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kobe-moovkobe",
@@ -2652,7 +2872,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムムーヴ"
+      "note": "運営: エフエムムーヴ",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-ayabe-fmikaru",
@@ -2664,7 +2885,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムあやべ"
+      "note": "運営: エフエムあやべ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nishinomiya-sakurafm",
@@ -2676,7 +2898,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shirahama-beachstation",
@@ -2688,7 +2911,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 南紀白浜コミュニティ放送"
+      "note": "運営: 南紀白浜コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-toyooka-fmjungle",
@@ -2700,7 +2924,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムたじま"
+      "note": "運営: エフエムたじま",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-oji-fmhaiho",
@@ -2712,7 +2937,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム西大和"
+      "note": "運営: エフエム西大和",
+      "power_kw": 0.005
     },
     {
       "id": "jp-cfm-nara-naradotfm",
@@ -2724,7 +2950,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 奈良シティエフエムコミュニケーションズ"
+      "note": "運営: 奈良シティエフエムコミュニケーションズ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takarazuka-hummingfm",
@@ -2736,7 +2963,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム宝塚"
+      "note": "運営: エフエム宝塚",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-himeji-fmgenki",
@@ -2748,7 +2976,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 姫路シティFM21"
+      "note": "運営: 姫路シティFM21",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yuasa-fmmothership",
@@ -2760,7 +2989,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-hikone-biwakohigashi",
@@ -2772,7 +3002,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムひこねコミュニティ放送"
+      "note": "運営: エフエムひこねコミュニティ放送",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-kyoto-sanjoradiocafe",
@@ -2784,7 +3015,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 京都コミュニティ放送"
+      "note": "運営: 京都コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-higashiomi-radiosweet",
@@ -2796,7 +3028,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: びわ湖キャプテン"
+      "note": "運営: びわ湖キャプテン",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-toyonaka-fmsenri",
@@ -2808,7 +3041,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 千里ニュータウンFM放送"
+      "note": "運営: 千里ニュータウンFM放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kakogawa-banbanradio",
@@ -2820,7 +3054,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: BAN-BANネットワークス"
+      "note": "運営: BAN-BANネットワークス",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-wakayama-bananafm",
@@ -2832,7 +3067,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム和歌山"
+      "note": "運営: エフエム和歌山",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fukuchiyama-fmtanba",
@@ -2844,7 +3080,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 京都FM丹波放送"
+      "note": "運営: 京都FM丹波放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kusatsu-rockets785",
@@ -2856,7 +3093,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: えふえむ草津"
+      "note": "運営: えふえむ草津",
+      "power_kw": 0.005
     },
     {
       "id": "jp-cfm-kyotango-fmtango",
@@ -2868,7 +3106,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 京丹後コミュニティ放送"
+      "note": "運営: 京丹後コミュニティ放送",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tanabe-fmtanabe",
@@ -2880,7 +3119,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kishiwada-radiokishiwada",
@@ -2892,7 +3132,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-hashimoto-fmhashimoto",
@@ -2904,7 +3145,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tamba-805tamba",
@@ -2916,7 +3158,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: たんばコミュニティネットワーク"
+      "note": "運営: たんばコミュニティネットワーク",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-maizuru-fmmaizuru",
@@ -2928,7 +3171,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 有本積善社"
+      "note": "運営: 有本積善社",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kyoto-radiomixkyoto",
@@ -2940,7 +3184,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: コミュニティラジオ京都"
+      "note": "運営: コミュニティラジオ京都",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-gojo-fmgojo",
@@ -2952,7 +3197,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 祥水園"
+      "note": "運営: 祥水園",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-izumiotsu-fmizumiotsu",
@@ -2964,7 +3210,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエム泉大津"
+      "note": "運営: エフエム泉大津",
+      "power_kw": 0.005
     },
     {
       "id": "jp-cfm-otsu-fmotsu",
@@ -2976,7 +3223,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-nagaokakyo-fmotokuni",
@@ -2988,7 +3236,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-yamatotakada-fmyamato",
@@ -3000,7 +3249,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: エフエムヤマト"
+      "note": "運営: エフエムヤマト",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-koka-fmhana",
@@ -3012,7 +3262,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 三瀧商店"
+      "note": "運営: 三瀧商店",
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-tawaramoto-fmmahoroba",
@@ -3024,7 +3275,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 田原本まちづくり観光振興機構"
+      "note": "運営: 田原本まちづくり観光振興機構",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kawachinagano-okukawachiradio",
@@ -3036,7 +3288,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yao-yaofm",
@@ -3048,7 +3301,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 株式会社八尾タイムズ"
+      "note": "運営: 株式会社八尾タイムズ",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shingu-fmshingu",
@@ -3060,7 +3314,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": "運営: 有限会社フリーク"
+      "note": "運営: 有限会社フリーク",
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fukuyama-bingo",
@@ -3072,7 +3327,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hagi-nanako",
@@ -3084,7 +3340,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kurashiki-fmkurashiki",
@@ -3096,7 +3353,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-okayama-momo",
@@ -3108,7 +3366,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shimonoseki-comeonfm",
@@ -3120,7 +3379,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-onomichi-fm794",
@@ -3132,7 +3392,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hiroshima-chupea",
@@ -3144,7 +3405,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ube-kirara",
@@ -3156,7 +3418,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-izumo-fmizumo",
@@ -3168,7 +3431,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shunan-fm",
@@ -3180,7 +3444,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hofu-wasshoi",
@@ -3192,7 +3457,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagato-aqua",
@@ -3204,7 +3470,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kasaoka-yumewave",
@@ -3216,7 +3483,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tottori-radiobird",
@@ -3228,7 +3496,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hatsukaichi-fmhatsukaichi",
@@ -3240,7 +3509,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hiroshima-hamster",
@@ -3252,7 +3522,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tsuyama-fmtsuyama",
@@ -3264,7 +3535,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yonago-darazfm",
@@ -3276,7 +3548,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-higashihiroshima-fm",
@@ -3288,7 +3561,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sanyoonoda-smilewave",
@@ -3300,7 +3574,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-mihara-forlife",
@@ -3312,7 +3587,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sakaide-fmsun",
@@ -3324,7 +3600,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-takamatsu-fm815",
@@ -3336,7 +3613,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tokushima-bfm791",
@@ -3348,7 +3626,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kochi-whalestation",
@@ -3360,7 +3639,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-imabari-baribari",
@@ -3372,7 +3652,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-uwajima-gaiya",
@@ -3384,7 +3665,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-niihama-hellonew",
@@ -3396,7 +3678,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shimanto-hatarando",
@@ -3408,7 +3691,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kurume-dreams",
@@ -3420,7 +3704,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kitakyushu-kitaq",
@@ -3432,7 +3717,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kitakyushu-hibiki",
@@ -3444,7 +3730,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yame-fmyame",
@@ -3456,7 +3743,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-fukuoka-tenjin",
@@ -3468,7 +3756,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-omuta-tanto",
@@ -3480,7 +3769,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nogata-chokuraji",
@@ -3492,7 +3782,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-karatsu-fmkaratsu",
@@ -3504,7 +3795,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-saga-ebisu",
@@ -3516,7 +3808,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-isahaya-rainbow",
@@ -3528,7 +3821,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nagasaki-shimin",
@@ -3540,7 +3834,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-sasebo-happy",
@@ -3552,7 +3847,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shimabara-fmshimabara",
@@ -3564,7 +3860,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-omura-silk",
@@ -3576,7 +3873,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-iki-fmiki",
@@ -3588,7 +3886,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-minamishimabara-himawari",
@@ -3600,7 +3899,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-goto-fm",
@@ -3612,7 +3912,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tsushima-fm",
@@ -3624,7 +3925,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kumamoto-fm791",
@@ -3636,7 +3938,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yatsushiro-kappa",
@@ -3648,7 +3951,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-oguni-greenpocket",
@@ -3660,7 +3964,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-amakusa-mitsubachi",
@@ -3672,7 +3977,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-nakatsu-noas",
@@ -3684,7 +3990,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-saiki-fmsaiki",
@@ -3696,7 +4003,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yufu-yufuin",
@@ -3708,7 +4016,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kitsuki-802",
@@ -3720,7 +4029,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-miyazaki-sunshine",
@@ -3732,7 +4042,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nobeoka-fmnobeoka",
@@ -3744,7 +4055,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-hyuga-fmhyuga",
@@ -3756,7 +4068,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kagoshima-friends",
@@ -3768,7 +4081,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kanoya-fmkanoya",
@@ -3780,7 +4094,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kimotsuki-fmkimotsuki",
@@ -3792,7 +4107,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-shibushi-fmshibushi",
@@ -3804,7 +4120,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-amami-dwave",
@@ -3816,7 +4133,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tarumizu-fmtarumizu",
@@ -3828,7 +4146,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-uken-fmuken",
@@ -3840,7 +4159,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-satsumasendai-fm",
@@ -3852,7 +4172,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kirishima-fmkirishima",
@@ -3864,7 +4185,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tatsugo-fmtatsugo",
@@ -3876,7 +4198,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-soo-good",
@@ -3888,7 +4211,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-aira-abview",
@@ -3900,7 +4224,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-osaki-fmosaki",
@@ -3912,7 +4237,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-itoman-taman",
@@ -3924,7 +4250,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-urasoe-fm21",
@@ -3936,7 +4263,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-naha-fmnaha",
@@ -3948,7 +4276,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-miyakojima-fmmiyako",
@@ -3960,7 +4289,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-okinawashi-koza",
@@ -3972,7 +4302,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.01
     },
     {
       "id": "jp-cfm-naha-rekio",
@@ -3984,7 +4315,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ishigaki-sansan",
@@ -3996,7 +4328,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-tomigusuku-fmtoyomi",
@@ -4008,7 +4341,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yomitan-fmyomitan",
@@ -4020,7 +4354,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-okinawashi-okiradi",
@@ -4032,7 +4367,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-uruma-fmuruma",
@@ -4044,7 +4380,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-nago-yanbaru",
@@ -4056,19 +4393,21 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-motobu-churaheart",
       "band": "FM",
-      "freq_khz": 79200.0,
+      "freq_khz": 78200.0,
       "name": "ちゅらハート FMもとぶ",
       "area": "沖縄県本部町",
       "callsign": "JOZZ0BV-FM",
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-kumejima-fmkumejima",
@@ -4080,7 +4419,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.08
     },
     {
       "id": "jp-cfm-ginowan-fmginowan",
@@ -4092,7 +4432,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-ginowan-cityfm",
@@ -4104,7 +4445,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     },
     {
       "id": "jp-cfm-yonabaru-fmyonabaru",
@@ -4116,7 +4458,8 @@
       "network": "community",
       "language": null,
       "target_area": null,
-      "note": null
+      "note": null,
+      "power_kw": 0.02
     }
   ]
 }

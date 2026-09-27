@@ -1,0 +1,97 @@
+{
+  "_readme": "日本国内の短波放送局(ラジオNIKKEI)。周波数・コールサイン・空中線電力は総務省の免許情報、運用時間はWikipedia「日経ラジオ社」(2026年6月現在の運用体制)による。power_kw は files/scripts/mic_import.py が免許情報から更新する。",
+  "_schema_version": 1,
+  "stations": [
+    {
+      "id": "jp-nikkei1-joz",
+      "band": "SW",
+      "freq_khz": 3925.0,
+      "name": "ラジオNIKKEI第1",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "長柄送信所。非常時のみ運用(通常は6055kHz)。",
+      "power_kw": 50.0
+    },
+    {
+      "id": "jp-nikkei1-joz2",
+      "band": "SW",
+      "freq_khz": 6055.0,
+      "name": "ラジオNIKKEI第1",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ2",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "第1放送の主力周波数。放送時間中は終日運用。",
+      "power_kw": 50.0
+    },
+    {
+      "id": "jp-nikkei1-joz3",
+      "band": "SW",
+      "freq_khz": 9595.0,
+      "name": "ラジオNIKKEI第1",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ3",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "長柄送信所。非常時のみ運用。",
+      "power_kw": 50.0
+    },
+    {
+      "id": "jp-nikkei1-joz4",
+      "band": "SW",
+      "freq_khz": 3925.0,
+      "name": "ラジオNIKKEI第1",
+      "area": "北海道根室市",
+      "callsign": "JOZ4",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "根室送信所。首都圏の難聴対策として放送開始〜8:00と17:00〜放送終了に運用。",
+      "power_kw": 10.0
+    },
+    {
+      "id": "jp-nikkei2-joz5",
+      "band": "SW",
+      "freq_khz": 3945.0,
+      "name": "ラジオNIKKEI第2",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ5",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "長柄送信所。非常時と臨時の放送延長時のみ運用。",
+      "power_kw": 10.0
+    },
+    {
+      "id": "jp-nikkei2-joz6",
+      "band": "SW",
+      "freq_khz": 6115.0,
+      "name": "ラジオNIKKEI第2",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ6",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "第2放送の主力周波数。国際放送との混信を避けるため19時以降は運用しない。",
+      "power_kw": 50.0
+    },
+    {
+      "id": "jp-nikkei2-joz7",
+      "band": "SW",
+      "freq_khz": 9760.0,
+      "name": "ラジオNIKKEI第2",
+      "area": "千葉県長生郡長柄町",
+      "callsign": "JOZ7",
+      "network": "independent",
+      "language": null,
+      "target_area": null,
+      "note": "長柄送信所。非常時のみ運用。",
+      "power_kw": 50.0
+    }
+  ]
+}

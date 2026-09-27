@@ -21,5 +21,6 @@ data class Station(
     val network: String?,
     val language: String?,
     val target_area: String?,
-    val note: String?
+    val note: String?,
+    val power_kw: Double?
 )

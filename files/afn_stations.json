@@ -1,0 +1,84 @@
+{
+  "_readme": "在日米軍向けのAFN(American Forces Network)のラジオ局。日米地位協定により電波法の適用外で、総務省の免許情報には含まれない。周波数・出力・送信所はWikipedia「AFN」(2026年1月時点の記述)による。",
+  "_schema_version": 1,
+  "stations": [
+    {
+      "id": "afn-tokyo-810",
+      "band": "AM",
+      "freq_khz": 810.0,
+      "name": "AFN Tokyo (Eagle 810)",
+      "area": "埼玉県和光市",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "在日米軍向けの英語放送。横田基地の放送局で、送信所は埼玉県和光市。夜間は広い範囲で受信できる。",
+      "power_kw": 50.0
+    },
+    {
+      "id": "afn-misawa-1575",
+      "band": "AM",
+      "freq_khz": 1575.0,
+      "name": "AFN Misawa (The Source 1575)",
+      "area": "青森県三沢市",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "在日米軍向けの英語放送(三沢基地)。",
+      "power_kw": 1.0
+    },
+    {
+      "id": "afn-iwakuni-1575",
+      "band": "AM",
+      "freq_khz": 1575.0,
+      "name": "AFN Iwakuni (Power 1575)",
+      "area": "山口県岩国市",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "在日米軍向けの英語放送(岩国基地)。",
+      "power_kw": 1.0
+    },
+    {
+      "id": "afn-sasebo-931",
+      "band": "FM",
+      "freq_khz": 93100.0,
+      "name": "AFN Sasebo (Thunder Radio)",
+      "area": "長崎県佐世保市",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "在日米軍向けの英語放送(佐世保基地)。2025年6月からFMで放送。",
+      "power_kw": 0.3
+    },
+    {
+      "id": "afn-okinawa-891",
+      "band": "FM",
+      "freq_khz": 89100.0,
+      "name": "AFN Okinawa (Wave 89)",
+      "area": "沖縄県",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "在日米軍向けの英語放送。送信所はキャンプ・フォスター。",
+      "power_kw": 1.0
+    },
+    {
+      "id": "afn-okinawa-648",
+      "band": "AM",
+      "freq_khz": 648.0,
+      "name": "AFN Okinawa (Surf 648)",
+      "area": "沖縄県浦添市",
+      "callsign": null,
+      "network": "AFN",
+      "language": "English",
+      "target_area": null,
+      "note": "送信所はキャンプ・キンザー。落雷による設備損傷のため2024年6月から停波中(2026年1月時点)。",
+      "power_kw": 10.0
+    }
+  ]
+}
