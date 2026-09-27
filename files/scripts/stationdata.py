@@ -21,6 +21,18 @@ PREFECTURES = [
     "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県",
 ]
 
+# DB だけにある列(build_db.py が JSON の列から導出する。stations テーブルでは COLUMNS の後に並ぶ)
+DERIVED_COLUMNS = ["prefecture", "category", "role"]
+# category(局の種類)と role(送信所の役割)の値。アプリの StationCategory / StationRole と一致させる
+CATEGORIES = ("nhk", "commercial", "community", "afn", "international", "other")
+ROLES = ("main", "relay", "fm_complement")
+COMMERCIAL_NETWORKS = ("JRN", "NRN", "JRN/NRN", "JFN", "JFL", "independent")
+NETWORK_CATEGORIES = {
+    "NHK": "nhk", "community": "community", "AFN": "afn",
+    **{network: "commercial" for network in COMMERCIAL_NETWORKS},
+}
+PREFECTURE_RE = re.compile(r"^(北海道|東京都|京都府|大阪府|.{2,3}県)")
+
 # 免許情報の所在地の表記ゆれ
 LOCATION_ALIASES = {
     "東京都八丈島八丈町": "東京都八丈町",
@@ -44,6 +56,22 @@ def save(path, data):
     # 既存ファイルと同じ書式(indent=2、非ASCIIはそのまま、末尾改行なし)で書き出す
     with open(path, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def prefecture_of(area):
+    """area の都道府県。「東京」のような都道府県の短い名前にも対応する。判定できなければ None。
+
+    部分一致は使わない(「東京都府中市」は「京都府」を含む)。
+    """
+    if not area:
+        return None
+    short_names = {p if p == "北海道" else p[:-1]: p for p in PREFECTURES}
+    if area in short_names:
+        return short_names[area]
+    m = PREFECTURE_RE.match(area)
+    if m and m.group(1) in PREFECTURES:
+        return m.group(1)
+    return None
 
 
 def load_municipality_coords():

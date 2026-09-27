@@ -1,5 +1,5 @@
 {
-  "_readme": "日本国内のコミュニティFM局(1992年制度化、76.0〜90.0MHz帯、市区町村単位の小規模FM局)データセット。Wikipedia「コミュニティ放送局一覧」の生wikitext/HTMLを直接パースし、一部は総務省(各総合通信局)の無線局情報でも裏取りして作成。廃局(放送終了)は除外済み。列構成はradio_stations.dbのstationsテーブルと同一。中継局は mic_stations.json(総務省の免許情報から自動生成)に収録。",
+  "_readme": "日本国内のコミュニティFM局(1992年制度化、76.0〜90.0MHz帯、市区町村単位の小規模FM局)データセット。Wikipedia「コミュニティ放送局一覧」の生wikitext/HTMLを直接パースし、一部は総務省(各総合通信局)の無線局情報でも裏取りして作成。廃局(放送終了)は除外済み。列構成はradio_stations.dbのstationsテーブルの先頭13列(stationdata.COLUMNS)と同じ(prefecture / category / role はbuild_db.pyが導出する)。中継局は mic_stations.json(総務省の免許情報から自動生成)に収録。",
   "_schema_version": 3,
   "stations": [
     {

@@ -24,5 +24,9 @@ data class Station(
     val note: String?,
     val power_kw: Double?,
     val lat: Double?,
-    val lon: Double?
+    val lon: Double?,
+    // 以下は files/scripts/build_db.py が他の列から導出した、放送局一覧の絞り込み用の列
+    val prefecture: String?,
+    val category: String,
+    val role: String?
 )

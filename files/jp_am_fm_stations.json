@@ -1,5 +1,5 @@
 {
-  "_readme": "日本国内のNHK・民放の主要局(親局)データセット。列構成は radio_stations.db の stations テーブルと同一(id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw, lat, lon)。freq_khz は AM/FM とも kHz 単位に統一(FMはMHz値×1000)。power_kw は空中線電力(kW)、lat/lon は送信所の所在地(市区町村の代表点)の座標で、files/scripts/mic_import.py が総務省の免許情報から更新する。NHKは2026年3月30日の再編により「ラジオ第1」→「NHK AM」、「NHK-FM」→「NHK FM」、「ラジオ第2」は同年3月29日に廃止。中継局・FM補完中継局・ここに無い親局は mic_stations.json(自動生成)に収録。",
+  "_readme": "日本国内のNHK・民放の主要局(親局)データセット。列構成は radio_stations.db の stations テーブルの先頭13列(stationdata.COLUMNS: id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw, lat, lon)と同じ。残りの prefecture / category / role は files/scripts/build_db.py が導出する。freq_khz は AM/FM とも kHz 単位に統一(FMはMHz値×1000)。power_kw は空中線電力(kW)、lat/lon は送信所の所在地(市区町村の代表点)の座標で、files/scripts/mic_import.py が総務省の免許情報から更新する。NHKは2026年3月30日の再編により「ラジオ第1」→「NHK AM」、「NHK-FM」→「NHK FM」、「ラジオ第2」は同年3月29日に廃止。中継局・FM補完中継局・ここに無い親局は mic_stations.json(自動生成)に収録。",
   "_schema_version": 4,
   "stations": [
     {

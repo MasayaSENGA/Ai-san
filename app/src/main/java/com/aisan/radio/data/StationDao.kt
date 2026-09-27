@@ -13,4 +13,8 @@ interface StationDao {
             "ORDER BY ABS(freq_khz - :freqKhz), power_kw IS NULL, power_kw DESC, name, area"
     )
     suspend fun findByFrequency(band: String, freqKhz: Double, toleranceKhz: Double): List<Station>
+
+    // 放送局一覧は全件(約2,500件)をメモリに読み込み、絞り込みと並べ替えをアプリ側で行う
+    @Query("SELECT * FROM stations")
+    suspend fun getAll(): List<Station>
 }

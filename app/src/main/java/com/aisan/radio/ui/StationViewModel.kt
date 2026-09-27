@@ -7,7 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.aisan.radio.data.AppDatabase
 import com.aisan.radio.data.Station
 import com.aisan.radio.location.CurrentLocation
+import com.aisan.radio.location.LocationPermissionMemory
 import com.aisan.radio.location.LocationResult
+import com.aisan.radio.location.MESSAGE_LOCATION_PERMISSION_BLOCKED
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,6 +35,7 @@ class StationViewModel(application: Application) : AndroidViewModel(application)
 
     private val dao = AppDatabase.getInstance(application).stationDao()
     private val prefs = application.getSharedPreferences("settings", Context.MODE_PRIVATE)
+    private val permissionMemory = LocationPermissionMemory(application)
 
     private val _uiState = MutableStateFlow(
         StationUiState(
@@ -48,7 +51,7 @@ class StationViewModel(application: Application) : AndroidViewModel(application)
 
     init {
         // 設定アプリなど、アプリ外で許可された場合も「拒否されたことがある」記録は消す
-        if (CurrentLocation.hasPermission(application)) prefs.edit().remove(KEY_LOCATION_DENIED_ONCE).apply()
+        if (CurrentLocation.hasPermission(application)) permissionMemory.clear()
     }
 
     fun onBandSelected(band: Band) {
@@ -99,17 +102,13 @@ class StationViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun onLocationPermissionGranted() {
-        prefs.edit().remove(KEY_LOCATION_DENIED_ONCE).apply()
+        permissionMemory.clear()
         onSortByDistanceChanged(true)
     }
 
-    // rationaleBefore/After: 許可を求める直前・拒否された直後の shouldShowRequestPermissionRationale。
-    // 拒否した後に説明が不要(false)になるのは、もう許可ダイアログを出せない場合だが、Android 11以降は
-    // ダイアログを閉じただけでも前後とも false になる。そのため、一度明示的に拒否されたことがある場合に限って
-    // 設定アプリでしか許可できない状態とみなす。
+    // rationaleBefore/After: 許可を求める直前・拒否された直後の shouldShowRequestPermissionRationale
     fun onLocationPermissionDenied(rationaleBefore: Boolean, rationaleAfter: Boolean) {
-        if (rationaleAfter) prefs.edit().putBoolean(KEY_LOCATION_DENIED_ONCE, true).apply()
-        val permanently = !rationaleAfter && (rationaleBefore || prefs.getBoolean(KEY_LOCATION_DENIED_ONCE, false))
+        val permanently = permissionMemory.recordDenial(rationaleBefore, rationaleAfter)
         prefs.edit().putBoolean(KEY_SORT_BY_DISTANCE, false).apply()
         _uiState.update {
             val next = it.copy(
@@ -125,7 +124,7 @@ class StationViewModel(application: Application) : AndroidViewModel(application)
     // 画面に戻ってきたとき(設定アプリで位置情報を許可して戻ってきた場合など)
     fun onResume() {
         if (!CurrentLocation.hasPermission(getApplication())) return
-        prefs.edit().remove(KEY_LOCATION_DENIED_ONCE).apply()
+        permissionMemory.clear()
         val state = _uiState.value
         when {
             state.locationPermissionBlocked -> onLocationPermissionGranted()
@@ -169,9 +168,7 @@ class StationViewModel(application: Application) : AndroidViewModel(application)
 
     private companion object {
         const val KEY_SORT_BY_DISTANCE = "sort_by_distance"
-        const val KEY_LOCATION_DENIED_ONCE = "location_denied_once"
         const val MESSAGE_PERMISSION_DENIED = "位置情報の利用が許可されていないため、出力の大きい順で表示しています"
-        const val MESSAGE_PERMISSION_BLOCKED =
-            "位置情報の利用が許可されていません。設定アプリでこのアプリに位置情報を許可すると、現在地から近い順に並べられます"
+        const val MESSAGE_PERMISSION_BLOCKED = MESSAGE_LOCATION_PERMISSION_BLOCKED
     }
 }

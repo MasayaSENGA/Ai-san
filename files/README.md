@@ -13,7 +13,7 @@
 | `municipality_coords.json` | 市区町村の代表点の座標(送信所の所在地を緯度経度に変換するための対照表) | 1,912市区町村 | `scripts/geo_import.py` で生成 |
 | `radio_stations.db` | 局データのJSONを統合したSQLite(単一テーブル `stations`、計2,459局)。Androidにそのまま同梱 | 2,459 | `scripts/build_db.py` で生成 |
 
-局データの各JSONの局オブジェクトは `stations` テーブルと同じ列構成です。
+局データの各JSONの局オブジェクトは `stations` テーブルの先頭13列と同じ列構成です(残りの3列はDB生成時に導出。下記)。
 
 ```
 id, band, freq_khz, name, area, callsign, network, language, target_area, note, power_kw, lat, lon
@@ -24,7 +24,21 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
 - `network`: `NHK` / `JRN` / `NRN` / `JRN/NRN` / `JFN` / `JFL` / `independent` / `community` / `AFN`。国際放送はEiBi上の局名
 - `power_kw`: 送信出力(空中線電力、kW)。国内局は総務省の免許情報の値。国際放送は `null`
 - `lat` / `lon`: 送信所の座標(アプリの「現在地から近い順」に使う)。国内局は免許情報の送信所の所在地(市区町村)の代表点、国際放送はEiBiの送信所の座標。不明な局は `null`(現在は全局に座標あり)
+- `language`: 国際放送とAFNの放送言語(日本語で書く。`build_db.py` が英字だけの値を拒否する)
 - 国際放送の `note` には放送時間(UTCと日本時間)・言語・対象地域を記載
+
+### DB生成時に導出する列(`prefecture` / `category` / `role`)
+
+放送局一覧の絞り込み用に、`build_db.py` の `derive()` が各JSONの内容から導出してDBに入れます(JSONには持たない)。
+
+| 列 | 値 | 導出のしかた |
+|---|---|---|
+| `prefecture` | 都道府県(例: `東京都`)。国際放送は `NULL` | `area` から判定。主要局の「東京」のような短い名前にも対応。判定できない国内局があればDB生成を止める |
+| `category` | `nhk` 812 / `commercial`(民放) 732 / `international` 510 / `community` 391 / `other` 8 / `afn` 6 | 国際放送は `international`。それ以外は `network` から(`NHK`→nhk、`community`→community、`AFN`→afn、JRN・NRN・JFN・JFL・independent→commercial、`null`→other(臨時災害放送局・中継元不明の受信障害対策中継局)) |
+| `role` | `main` 553 / `relay` 1,220 / `fm_complement` 176 / `NULL` 510(国際放送) | 上から順に最初に当てはまるもの: 国際放送→`NULL`、AFN→`main`、`note` が「FM補完中継局」で始まる→`fm_complement`、コールサイン無し→`relay`、手で整備したファイルの局→`main`、総務省データのNHK・`network` 無し→`main`、総務省データの民放・コミュニティFMでコールサインがある局は、手で整備したファイルに同じ局名が無く、かつ同じ局名の中で出力が最大なら`main`(例: 栃木放送は鹿沼市のJOXF)、それ以外は`relay`(例: HBCラジオ 北見 JOQN) |
+
+`mic_import.py` がFM補完中継局の `note` の先頭に書く「FM補完中継局」を変えるときは、`derive()` も直してください。
+アプリの `StationCategory` / `StationRole` / `PREFECTURES` は `stationdata.py` の `CATEGORIES` / `ROLES` / `PREFECTURES` と一致させる必要があり、単体テスト(`ClassificationContractTest`)で確かめています。
 
 ## データの出所
 
@@ -52,6 +66,8 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
 - 民放AM局の運用休止は2026年9月30日までとされています。10月以降の扱い(延長・再開・廃止)が決まったら注記の更新が必要です。
 - 受信障害対策中継局(自治体などが難聴地域向けに設ける中継局)は、同じ市区町村・都道府県に同じ周波数の局がある場合にその局の中継とみなしています。中継元を特定できないものは「受信障害対策中継局」として収録しています。
 - 同じ市区町村・同じ周波数・同じ局名の送信所は1件にまとめています(件数は `note` に記載)。
+- 放送局一覧の「地域」は `area` の都道府県です。`jp_am_fm_stations.json` の主要局は放送局の都道府県なので、送信所が埼玉県・千葉県にあるTBSラジオ・文化放送・ニッポン放送・NHK東京(AM)も東京都に入ります(送信所で探すときは「関東地方」を選んでください)。それ以外の局は送信所の都道府県なので、AFN Tokyo(横田基地の放送局)は送信所のある埼玉県、東京のラジオNIKKEIは千葉県(長柄)と北海道(根室のJOZ4)に入ります。コミュニティFMで放送エリアが複数の都県にまたがるもの(「静岡県熱海市・神奈川県湯河原町」)は、先頭の都県になります。
+- 総務省データのうち手で整備したファイルに無い民放局は、同じ局名の中で出力が最大の送信所を親局としています(実際の親局と違う場合があります)。
 - 国内局の座標は送信所がある市区町村の代表点で、実際の送信所(山頂など)とは数km〜十数kmずれることがあります。面積の広い市町村ほどずれが大きくなります。
 - 国際放送で送信所が国名しか分からないもの(例: クウェートからの中継)は、その国の送信所の平均位置を使っています(国内の送信所が狭い範囲に収まる国のみ)。
 - AFNの座標は `municipality_coords.json` の値(AFN Okinawa のFMはキャンプ・フォスターの座標)を手で入れています。`mic_import.py` は更新しないので、`geo_import.py` を再実行したら見直してください。
@@ -91,7 +107,7 @@ id, band, freq_khz, name, area, callsign, network, language, target_area, note, 
    python3 files/scripts/build_db.py
    ```
 
-   `build_db.py` は全JSONを検証(列構成・周波数の範囲・IDや局の重複)してからDBを作り、`PRAGMA user_version` を `AppDatabase.kt` の `version` と同じ値にします。
+   `build_db.py` は全JSONを検証(列構成・周波数の範囲・IDや局の重複)し、`prefecture` / `category` / `role` を導出して(判定できない局があれば止まる)からDBを作り、`PRAGMA user_version` を `AppDatabase.kt` の `version` と同じ値にします。
 
 ## Androidでの使い方(Room)
 

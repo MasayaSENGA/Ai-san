@@ -544,6 +544,7 @@ def generate(items, curated, last_update):
         if kind in ("am", "fm", "foreign", "sw"):
             name, network = brand_of(item)
             if item["band"] == "FM" and item["licensee"] in am_licensees:
+                # note の先頭「FM補完中継局」は build_db.py が role=fm_complement の判定に使う。変えるときは derive() も直す
                 am_freq = main_am.get(name)
                 notes.append(f"FM補完中継局(ワイドFM)。AM {am_freq:g}kHzと同じ放送" if am_freq else "FM補完中継局(ワイドFM)")
             elif not callsign:

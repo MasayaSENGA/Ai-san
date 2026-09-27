@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 // 局データを更新したら version を上げ、files/scripts/build_db.py でアセットのDBを作り直す
-@Database(entities = [Station::class], version = 3, exportSchema = false)
+@Database(entities = [Station::class], version = 4, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun stationDao(): StationDao
 

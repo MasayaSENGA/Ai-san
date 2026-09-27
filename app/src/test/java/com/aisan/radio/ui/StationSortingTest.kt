@@ -9,7 +9,8 @@ class StationSortingTest {
 
     private fun station(id: String, freqKhz: Double, lat: Double?, lon: Double?, powerKw: Double? = null) = Station(
         id = id, band = "FM", freq_khz = freqKhz, name = id, area = null, callsign = null, network = null,
-        language = null, target_area = null, note = null, power_kw = powerKw, lat = lat, lon = lon
+        language = null, target_area = null, note = null, power_kw = powerKw, lat = lat, lon = lon,
+        prefecture = null, category = "other", role = null
     )
 
     private val tokyo = GeoPoint(35.6812, 139.7671)

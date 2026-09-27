@@ -10,4 +10,8 @@ enum class Band(val dbValue: String, val label: String, val hint: String, val un
         FM -> inputValue * 1000.0
         AM, SW -> inputValue
     }
+
+    companion object {
+        fun fromDbValue(value: String): Band? = entries.firstOrNull { it.dbValue == value }
+    }
 }
