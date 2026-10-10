@@ -132,3 +132,9 @@ Android Studio、またはコマンドラインから以下でビルドできま
 ```sh
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
+
+## ライセンス
+
+ソースコードは MIT License です。詳しくは [`LICENSE`](LICENSE) を参照してください。
+
+`files/` の局データとアプリに同梱しているデータベースは、総務省の免許情報・EiBi・Wikidata などをもとに作成しています。データの出所は [`files/README.md`](files/README.md) を参照してください。
