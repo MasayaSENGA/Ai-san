@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 放送波: 中心の点と3本のアーク -->
+    <path
+        android:pathData="M48.34,45.73 A10.8,10.8 0 0,1 48.34,62.27"
+        android:strokeColor="#FFE8E7FF"
+        android:strokeWidth="1.8" />
+    <path
+        android:pathData="M53.53,39.55 A18.86,18.86 0 0,1 53.53,68.45"
+        android:strokeColor="#FFCECCFF"
+        android:strokeWidth="1.8" />
+    <path
+        android:pathData="M58.71,33.37 A26.93,26.93 0 0,1 58.71,74.63"
+        android:strokeColor="#FFACAAFA"
+        android:strokeWidth="1.8" />
+    <path
+        android:pathData="M41.4,54 m-3.02,0 a3.02,3.02 0 1,0 6.04,0 a3.02,3.02 0 1,0 -6.04,0"
+        android:fillColor="#FFFAFAFF" />
+</vector>
