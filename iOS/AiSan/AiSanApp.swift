@@ -96,6 +96,7 @@ struct SearchView: View {
     @State private var results: [Station] = []
     @State private var searched = false
     @State private var sortNear = false
+    @FocusState private var inputFocused: Bool
     @StateObject private var location = LocationModel()
     private let bands = ["AM", "FM", "SW"]
     private var unit: String { band == "FM" ? "MHz" : "kHz" }
@@ -114,6 +115,7 @@ struct SearchView: View {
                     Text("周波数 (\(unit))").foregroundStyle(.secondary)
                     TextField(band == "FM" ? "例: 82.5" : band == "AM" ? "例: 954" : "例: 9750", text: $input)
                         .keyboardType(.decimalPad).multilineTextAlignment(.trailing)
+                        .focused($inputFocused)
                 }.padding(12).background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
                 Button(action: search) { Label("検索", systemImage: "magnifyingglass").frame(maxWidth: .infinity) }.buttonStyle(.borderedProminent)
                 Toggle("現在地から近い順に並べる", isOn: $sortNear).onChange(of: sortNear) { _, enabled in if enabled { location.request() } }
@@ -122,11 +124,26 @@ struct SearchView: View {
                 List {
                     ForEach(ordered) { station in StationRow(station: station, band: band, location: location.location) }
                     Section { DataNotice() }
-                }.listStyle(.plain)
+                }.listStyle(.plain).scrollDismissesKeyboard(.immediately)
             }.padding(.horizontal).padding(.top, 12).navigationTitle("Ai-san")
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    if inputFocused {
+                        VStack(spacing: 0) {
+                            Divider()
+                            HStack {
+                                Spacer()
+                                Button("完了") { inputFocused = false }
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                        }
+                        .background(.background)
+                    }
+                }
         }
     }
     private func search() {
+        inputFocused = false
         guard let frequency else { results = []; searched = false; return }
         results = StationStore.shared.search(band: band, khz: frequency, tolerance: tolerance); searched = true
         if sortNear { location.request() }
@@ -142,6 +159,7 @@ struct BrowseView: View {
     @State private var network = "すべて"
     @State private var language = "すべて"
     @State private var sort = "都道府県順"
+    @FocusState private var keywordFocused: Bool
     @StateObject private var location = LocationModel()
     private let categories = ["すべて", "NHK", "民放", "コミュニティFM", "AFN(在日米軍)", "国際放送", "その他"]
     private let prefectures = ["すべて", "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県", "石川県", "福井県", "山梨県", "長野県", "岐阜県", "静岡県", "愛知県", "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県", "鳥取県", "島根県", "岡山県", "広島県", "山口県", "徳島県", "香川県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"]
@@ -197,6 +215,9 @@ struct BrowseView: View {
             List {
                 Section {
                     TextField("局名・地域・コールサイン・言語など", text: $keyword)
+                        .focused($keywordFocused)
+                        .submitLabel(.done)
+                        .onSubmit { keywordFocused = false }
                     Picker("種類", selection: $category) { ForEach(categories, id: \.self) { Text($0) } }
                         .onChange(of: category) { _, value in
                             if value == "国際放送" { area = "すべて"; transmitter = "すべて" }
@@ -234,6 +255,21 @@ struct BrowseView: View {
                 }
                 Section { DataNotice() }
             }.listStyle(.insetGrouped).navigationTitle("放送局一覧")
+                .scrollDismissesKeyboard(.immediately)
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    if keywordFocused {
+                        VStack(spacing: 0) {
+                            Divider()
+                            HStack {
+                                Spacer()
+                                Button("完了") { keywordFocused = false }
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                        }
+                        .background(.background)
+                    }
+                }
         }
     }
 }
