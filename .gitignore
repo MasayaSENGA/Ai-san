@@ -36,5 +36,10 @@ __pycache__/
 *.log
 .DS_Store
 
+# Xcode
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
 # Claude Code local session state
 .claude/

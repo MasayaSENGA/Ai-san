@@ -45,6 +45,34 @@ AM／FM／短波(SW)を切り替えて周波数を入力すると、あらかじ
 並び順は「都道府県順」(北から。都道府県ごとの見出し付き)、「局名順」、「出力の大きい順」、
 「現在地から近い順」から選べます。「現在地から近い順」を選ぶと、検索画面と同じく位置情報の利用許可を求めます。
 
+## iPhone版
+
+SwiftUIで実装したiOS版を `iOS/AiSan.xcodeproj` に追加しています。Android版と同じSQLiteデータベースを同梱し、周波数検索、放送局一覧、一覧の絞り込み・並べ替え、位置情報による距離順に対応しています。
+
+- 対応OS: iOS 17以上
+- Xcodeで `iOS/AiSan.xcodeproj` を開き、`AiSan` スキームを実行
+- 実機で実行するには、Xcodeの「Signing & Capabilities」で自分のTeam(Apple ID)を選択
+- 位置情報は距離順を選んだ場合だけ要求し、端末内で使用
+
+### 実機へのインストール
+
+Xcodeの画面から実行するほか、コマンドラインでも実機へインストールできます。
+`<UDID>` は `xcrun devicectl list devices` で確認できます。
+
+```sh
+xcodebuild -project iOS/AiSan.xcodeproj -scheme AiSan -configuration Debug \
+  -destination 'platform=iOS,id=<UDID>' \
+  -derivedDataPath build/DerivedData -allowProvisioningUpdates \
+  DEVELOPMENT_TEAM=<TEAM_ID> build
+xcrun devicectl device install app --device <UDID> \
+  build/DerivedData/Build/Products/Debug-iphoneos/AiSan.app
+```
+
+`<TEAM_ID>` はXcodeの「Signing & Capabilities」で選択したTeamのIDです。
+
+無料のApple ID(Personal Team)で署名した場合、証明書の有効期限は7日間です。
+期限が切れて起動できなくなったら、同じ手順で再インストールしてください。
+
 ## 技術構成
 
 - Kotlin
